@@ -9,7 +9,6 @@ class teleg_bot:
     def __init__(self, token):
         self.bot=Bot(token=token)
         self.dp=Dispatcher(self.bot)
-        self.dp.message_handler(self.handle_m)
     def start(self):
         logging.info("Bot uruchomiony")
         self.bot.delete_webhook(drop_pending_updates=True)
@@ -17,7 +16,7 @@ class teleg_bot:
     def handle_m(self, message: types.Message):
         uzyt_message = message.text
         logging.info(f"Otrzymano: {uzyt_message}.")
-        self.process_message(uzyt_message)
+        self.N(uzyt_message)
         message.answer(f"Otrzymano: {uzyt_message}")
     def N(self, uzyt_message: str):
         logging.info(f"Wiadomosc: {uzyt_message}")
