@@ -8,7 +8,7 @@ class Model:
         self.pdf_path = pdf_path
         self.model_embedding = "mxbai-embed-large"
         self.model = "llama3.1"
-        self.prompt = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu z planu nauki języka polskiego w szkole ponadpodstawowej, ten plan jest dokładny. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Twoja odpowiedź powinna być dokładna, bez zbędnych informacji, ale informatywna i rozszerzona. Jeśli nie znasz odpowiedzi, poproś o przekształcenie pytania. 
+        self.prompt = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu z planu nauki języka polskiego w szkole ponadpodstawowej, ten plan jest dokładny. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Twoja odpowiedź powinna być dokładna, bez zbędnych informacji, ale informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. Jeśli nie znasz odpowiedzi, poproś o przekształcenie pytania. 
 Oto fragmenty tekstu: [{}] 
 Pytanie: [{}]""")
         self.client = chromadb.Client()
@@ -46,7 +46,7 @@ Pytanie: [{}]""")
 
         results = self.collection.query(
             query_embeddings=[response["embedding"]],
-            n_results=3)
+            n_results=2)
 
         print(results['documents'])
         data = "\n".join([doc[0] for doc in results['documents']])
