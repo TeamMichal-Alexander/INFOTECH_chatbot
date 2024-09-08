@@ -8,7 +8,7 @@ class Model:
         self.pdf_path = pdf_path
         self.model_embedding = "mxbai-embed-large"
         self.model = "llama3.1"
-        self.prompt = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu z planu nauki języka polskiego w szkole ponadpodstawowej, ten plan jest dokładny. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Twoja odpowiedź powinna być dokładna, bez zbędnych informacji. Jeśli nie znasz odpowiedzi, poproś o przekształcenie pytania. 
+        self.prompt = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu z planu nauki języka polskiego w szkole ponadpodstawowej, ten plan jest dokładny. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Twoja odpowiedź powinna być dokładna, bez zbędnych informacji, ale informatywna. Jeśli nie znasz odpowiedzi, poproś o przekształcenie pytania. 
 Oto fragmenty tekstu: [{}] 
 Pytanie: [{}]""")
         self.client = chromadb.Client()
