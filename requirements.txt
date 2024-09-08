@@ -1,0 +1,4 @@
+pdfplumber==0.11.4
+ollama==0.3.2
+chromadb==0.5.5
+aiogram==3.12.0
