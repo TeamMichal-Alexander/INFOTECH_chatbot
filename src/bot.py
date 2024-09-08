@@ -2,14 +2,17 @@ import logging
 import asyncio
 from aiogram import Bot, Dispatcher, types
 from model import Model
+import os
+from dotenv import load_dotenv
 
-api_token = '7428827735:AAGbsVtSefZP5tvOd4-l5qo7UoXsTR2cPGg'
+load_dotenv(dotenv_path='../.env')
+api_token = os.getenv('api_token')
 logging.basicConfig(level=logging.INFO)
 
 
 class TelegBot:
     def __init__(self, token):
-        pdf_path = 'content/język_polski3.pdf'
+        pdf_path = '../content/język_polski3.pdf'
         self.bot = Bot(token=token)
         self.dp = Dispatcher()
         self.dp.message.register(self.handle_m)
