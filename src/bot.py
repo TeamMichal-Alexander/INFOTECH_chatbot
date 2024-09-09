@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 
 class TelegBot:
     def __init__(self, token):
-        pdf_path = '../content/język_polski3.pdf'
+        pdf_path = '../content/język_polski_new.pdf'
         self.bot = Bot(token=token)
         self.dp = Dispatcher()
         self.dp.message.register(self.handle_m)
