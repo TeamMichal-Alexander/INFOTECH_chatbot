@@ -56,3 +56,10 @@ Pytanie: [{}]""")
             prompt=self.prompt.format(data, question))
 
         return output['response']
+
+
+    def ask_api(self, _json: dict):
+        question = _json.get('question')
+        answer = self.ask(question)
+        json_answer =  {'answer': answer}
+        return json_answer
