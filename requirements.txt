@@ -3,3 +3,5 @@ ollama==0.3.2
 chromadb==0.5.5
 aiogram==3.12.0
 python-dotenv==1.0.1
+Flask==3.0.3
+Django==5.1.1
