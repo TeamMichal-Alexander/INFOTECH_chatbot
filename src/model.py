@@ -21,11 +21,9 @@ Pytanie: [{}]""")
         with pdfplumber.open(self.pdf_path) as pdf:
             for page in pdf.pages:
                 text += page.extract_text() + "\n"
-        print(text)
         document = text.split('---')
         for i in text.split('___'):
             document.append(i)
-        print(len(document))
         return document
 
 
