@@ -12,7 +12,8 @@ def query_view(request):
         form = QueryForm(request.POST)
         if form.is_valid():
             query = form.cleaned_data['query']
-            response = requests.post('http://127.0.0.1:5000/api/model/ask', json={'question': query})
+            selected_option = form.cleaned_data['choice_field']
+            response = requests.post('http://127.0.0.1:5000/api/model/ask', json={'question': query, 'file': selected_option})
             if response.status_code == 200:
                 data = response.json()
                 result = data.get('answer')
