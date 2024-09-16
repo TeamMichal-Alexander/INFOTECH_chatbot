@@ -6,4 +6,4 @@ class QueryForm(forms.Form):
         ('lekcji', 'Plan lekcji'),
     ]
     choice_field = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect, label="Wybieżcie plik")
-    query = forms.CharField(label='Wprowadźcie pytanie', max_length=100)
+    query = forms.CharField(label='Wprowadźcie prośbę do modelej AI', max_length=100)
