@@ -82,9 +82,10 @@ Odpowiadaj ściśle w formacie zapytania SQL, bez komentarzy i zbędnych wyjaśn
 Nazwy dni tygodnia powinni się zaczynać z dużej litery.
 
 Przykłady: 
-Pytanie: "Jaki nauczyciel uczy w klasie 2cT?" SQLQuery: SELECT T2."firstname", T2."lastname" FROM "classes" AS T1 INNER JOIN "teachers" AS T2 ON T1."teacherid" = T2."teacherid" WHERE T1."name" = '2cT' LIMIT 1; SQLResult: Paweł|Ostrowski Odpowiedź: Nauczyciel w klasie 2cT to Paweł Ostrowski.
+Pytanie: "Jakiego wychowawcę ma 2cT?" SQLQuery: SELECT T2."firstname", T2."lastname" FROM "classes" AS T1 INNER JOIN "teachers" AS T2 ON T1."teacherid" = T2."teacherid" WHERE T1."name" = '2cT' LIMIT 1; SQLResult: Paweł|Ostrowski Odpowiedź: Wychowawca w klasie 2cT to Paweł Ostrowski.
 Pytanie: Kto prowadzi lekcji edb? SQLQuery: SELECT T5.firstname, T5.lastname FROM lessons AS T3 INNER JOIN subjects AS T4 ON T3.subjectid = T4.subjectid INNER JOIN teachers AS T5 ON T3.teacherid = T5.teacherid WHERE T4.short_name = 'edb' OR T4.name = 'edb'; SQLResult: Aleksander|Ciwoniuk Odpowiedź: Lekcje edb prowadzi Aleksander Ciwoniuk
-Pytanie: Jaki przedmiot mają 2cT drugą lekcją we wtorek? SQLQuery: lekcję ma 2SELECT su.name FROM subjects AS su INNER JOIN lessons AS le ON su.subjectid = le.subjectid INNER JOIN classes AS cl ON le.classid = cl.classid INNER JOIN cards AS ca ON le.lessonid = ca.lessonid INNER JOIN days AS da ON ca.daysbinary = da.daysbinary WHERE cl.name = '2cT' AND (da.name = 'Wtorek' OR da.name = 'wtorek') AND ca.period = 2; SQLResult: programowanie obiektowe Answer: Drugą lekcją we wtorek 2cT ma programowanie obiektowe
+Pytanie: Jaki przedmiot mają 2cT drugą lekcją we wtorek? SQLQuery: SELECT su.name FROM subjects AS su INNER JOIN lessons AS le ON su.subjectid = le.subjectid INNER JOIN classes AS cl ON le.classid = cl.classid INNER JOIN cards AS ca ON le.lessonid = ca.lessonid INNER JOIN days AS da ON ca.daysbinary = da.daysbinary WHERE cl.name = '2cT' AND (da.name = 'Wtorek' OR da.name = 'wtorek') AND ca.period = 2; SQLResult: programowanie obiektowe Answer: Drugą lekcją we wtorek 2cT ma programowanie obiektowe
+Pytanie: Kiedy 2cT ma lekcje testowania i dokumentacji? SQLQuery:  SELECT da.name FROM days as da INNER JOIN cards AS ca ON da.daysbinary = ca.daysbinary INNER JOIN lessons AS le ON ca.lessonid = le.lessonid INNER JOIN classes AS cl ON le.classid = cl.classid INNER JOIN subjects AS su ON le.subjectid = su.subjectid WHERE cl.name = '2cT' AND (su.name = 'testowanie i dokumentacja' OR su.short_name = 'testowanie i dokumentacja'); SQLResult: Poniedziałek Answer: 2cT ma lekcję testowania i dokumentacji w poniedziałek
 
 Pytanie: {}
 """
@@ -155,7 +156,7 @@ Pytanie: {}
             human_qry_template = HumanMessagePromptTemplate.from_template(
                 """Zostaje Ci zadane pytanie: „{question}”.
 Otrzymujesz także następujące dane z bazy danych: „{result}”.
-Korzystając wyłącznie z tych danych, krótko i precyzyjnie, ale informatywną odpowiedz na pytanie. Nie dodawaj nic zbędnego i nie udzielaj wyjaśnień — odpowiadaj tylko na temat."""
+Korzystając wyłącznie z tych danych, które podałem, krótko i precyzyjnie, ale informatywnie odpowiedz na pytanie. Nie dodawaj nic zbędnego i nie udzielaj wyjaśnień — odpowiadaj tylko na temat."""
             )
             messages = [
                 SystemMessage(content=system_message),
@@ -164,7 +165,7 @@ Korzystając wyłącznie z tych danych, krótko i precyzyjnie, ale informatywną
             response = self.llm_model_for_sql(messages).content
             return response
         else:
-            return 'Niestety nie udało się znaliść jakiej kolwiek informacji, sprobójcie przeformulować prompt lub zapytajcie o czymś innym'
+            return 'Niestety nie udało się znaleść jakiejkolwiek informacji, sprobójcie przeformulować prompt lub zapytajcie o czymś innym'
 
     def ask_api(self, _json: dict):
         question = _json.get('question')
