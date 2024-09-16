@@ -17,7 +17,7 @@ class Model:
         self.pdf_path = pdf_path
         self.model_embedding = "mxbai-embed-large"
         self.model = "llama3.1"
-        self.llm_model_for_sql = ChatOllama(model='codellama')
+        self.llm_model_for_sql = ChatOllama(model='llama3.1')
         self.prompt = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu z planu nauki języka polskiego w szkole ponadpodstawowej, ten plan jest dokładny. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Twoja odpowiedź powinna być dokładna, bez zbędnych informacji, ale informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. Jeśli nie znasz odpowiedzi, poproś o przekształcenie pytania. 
 Oto fragmenty tekstu: [{}] 
 Pytanie: [{}]""")
@@ -84,8 +84,9 @@ Nazwy dni tygodnia powinni się zaczynać z dużej litery.
 Przykłady: 
 Pytanie: "Jakiego wychowawcę ma 2cT?" SQLQuery: SELECT T2."firstname", T2."lastname" FROM "classes" AS T1 INNER JOIN "teachers" AS T2 ON T1."teacherid" = T2."teacherid" WHERE T1."name" = '2cT' LIMIT 1; SQLResult: Paweł|Ostrowski Odpowiedź: Wychowawca w klasie 2cT to Paweł Ostrowski.
 Pytanie: Kto prowadzi lekcji edb? SQLQuery: SELECT T5.firstname, T5.lastname FROM lessons AS T3 INNER JOIN subjects AS T4 ON T3.subjectid = T4.subjectid INNER JOIN teachers AS T5 ON T3.teacherid = T5.teacherid WHERE T4.short_name = 'edb' OR T4.name = 'edb'; SQLResult: Aleksander|Ciwoniuk Odpowiedź: Lekcje edb prowadzi Aleksander Ciwoniuk
-Pytanie: Jaki przedmiot mają 2cT drugą lekcją we wtorek? SQLQuery: SELECT su.name FROM subjects AS su INNER JOIN lessons AS le ON su.subjectid = le.subjectid INNER JOIN classes AS cl ON le.classid = cl.classid INNER JOIN cards AS ca ON le.lessonid = ca.lessonid INNER JOIN days AS da ON ca.daysbinary = da.daysbinary WHERE cl.name = '2cT' AND (da.name = 'Wtorek' OR da.name = 'wtorek') AND ca.period = 2; SQLResult: programowanie obiektowe Answer: Drugą lekcją we wtorek 2cT ma programowanie obiektowe
+Pytanie: Wypisz przedmiot który ma 2cT drugą lekcją we wtorek? SQLQuery: SELECT su.name FROM subjects AS su INNER JOIN lessons AS le ON su.subjectid = le.subjectid INNER JOIN classes AS cl ON le.classid = cl.classid INNER JOIN cards AS ca ON le.lessonid = ca.lessonid INNER JOIN days AS da ON ca.daysbinary = da.daysbinary WHERE cl.name = '2cT' AND (da.name = 'Wtorek' OR da.name = 'wtorek') AND ca.period = 2; SQLResult: programowanie obiektowe Answer: Drugą lekcją we wtorek 2cT ma programowanie obiektowe
 Pytanie: Kiedy 2cT ma lekcje testowania i dokumentacji? SQLQuery:  SELECT da.name FROM days as da INNER JOIN cards AS ca ON da.daysbinary = ca.daysbinary INNER JOIN lessons AS le ON ca.lessonid = le.lessonid INNER JOIN classes AS cl ON le.classid = cl.classid INNER JOIN subjects AS su ON le.subjectid = su.subjectid WHERE cl.name = '2cT' AND (su.name = 'testowanie i dokumentacja' OR su.short_name = 'testowanie i dokumentacja'); SQLResult: Poniedziałek Answer: 2cT ma lekcję testowania i dokumentacji w poniedziałek
+Pytanie: Wypisz wszystkie lekcje które ma 2cT w środę? SQLQuery: SELECT su.name FROM subjects AS su INNER JOIN lessons AS le ON su.subjectid = le.subjectid INNER JOIN classes AS cl ON le.classid = cl.classid INNER JOIN cards AS ca ON le.lessonid = ca.lessonid INNER JOIN days AS da ON ca.daysbinary = da.daysbinary WHERE cl.name = '2cT' AND (da.name = 'Środa' OR da.name = 'środa'); SQLResult zajęcia z wychowawcą, matematyka, podstawy baz danych, podstawy baz danych, chemia, Przedmiot prcodawcy, Przedmiot prcodawcy, informatyka Answer: 2cT ma zajęcia z wychowawcą, matematyka, podstawy baz danych, podstawy baz danych, chemia, Przedmiot prcodawcy, Przedmiot prcodawcy, informatyka w środę
 
 Pytanie: {}
 """
@@ -138,7 +139,7 @@ Pytanie: {}
 
     def ask_sql(self, question):
         error = 0
-        for i in range(5):
+        for i in range(10):
             response = self.chain.invoke({"question": self.prompt_to_codellama.format(question)})
             try:
                 answer = self.db.run(self.sql_prompt_extractor(response))
@@ -152,11 +153,12 @@ Pytanie: {}
             db_context = self.sql_prompt_extractor(response)
             db_answer = self.db.run(self.sql_prompt_extractor(response))
 
-            system_message = "Zostanie Ci zadane pytanie i udostępnione dane z bazy danych, które zawierają odpowiedź na to pytanie. Twoim zadaniem jest, korzystając wyłącznie z tych danych, krótko i precyzyjnie odpowiedzieć na pytanie. Nie dodawaj zbędnych informacji i nie udzielaj wyjaśnień — odpowiadaj tylko na temat."
+            system_message = "Zostanie Ci zadane pytanie i udostępnione dane z bazy danych, które zawierają odpowiedź na to pytanie. Twoim zadaniem jest, korzystając wyłącznie z tych danych, krótko i precyzyjnie odpowiedzieć na pytanie. Nie dodawaj zbędnych informacji i nie udzielaj wyjaśnień — odpowiadaj tylko na temat. Przy przeliczeniu w celu rozdzielenia wykorzystuj przycinek."
             human_qry_template = HumanMessagePromptTemplate.from_template(
                 """Zostaje Ci zadane pytanie: „{question}”.
 Otrzymujesz także następujące dane z bazy danych: „{result}”.
-Korzystając wyłącznie z tych danych, które podałem, krótko i precyzyjnie, ale informatywnie odpowiedz na pytanie. Nie dodawaj nic zbędnego i nie udzielaj wyjaśnień — odpowiadaj tylko na temat."""
+Korzystając wyłącznie z tych danych, które podałem, krótko i precyzyjnie, ale informatywnie odpowiedz na pytanie. Nie dodawaj nic zbędnego i nie udzielaj wyjaśnień — odpowiadaj tylko na temat. Przy przeliczeniu w celu rozdzielenia wykorzystuj przycinek. 
+"""
             )
             messages = [
                 SystemMessage(content=system_message),
