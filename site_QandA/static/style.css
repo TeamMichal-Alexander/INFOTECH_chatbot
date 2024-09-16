@@ -1,0 +1,20 @@
+body, div, p, form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+#answer {
+    background-color: bisque;
+    width: 50%;
+    border-radius: 10px
+}
+
+input {
+    margin: 10px;
+}
+
+#inside_div {
+    margin: 15px;
+}

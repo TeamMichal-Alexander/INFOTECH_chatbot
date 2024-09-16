@@ -29,7 +29,7 @@ class TelegBot:
     async def handle_m(self, message: types.Message):
         question = message.text
         logging.info(f"Otrzymano: {question}.")
-        answer = self.model.ask(question)
+        answer = self.model.ask_pdf(question)
         await message.answer(answer)
 
 bot = TelegBot(api_token)
