@@ -1,16 +1,22 @@
 import ollama
 import chromadb
 import pdfplumber
-from langchain_community.chat_models import ChatOllama
+from click import prompt
+
+from copy_ollama import ChatOllama
 from langchain_community.utilities import SQLDatabase
 from langchain.chains import create_sql_query_chain
 from langchain.schema import HumanMessage, SystemMessage
 from langchain.prompts.chat import HumanMessagePromptTemplate
+import requests
+from requests import RequestException
 
 
 import os
 
-
+class I:
+    def __init__(self):
+        pass
 
 class Model:
     def __init__(self, pdf_path: str):
@@ -19,7 +25,7 @@ class Model:
         self.model = "llama3.1"
         self.llm_model_for_sql = ChatOllama(model='llama3.1')
         self.prompt = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu z planu nauki języka polskiego w szkole ponadpodstawowej, ten plan jest dokładny. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Twoja odpowiedź powinna być dokładna, bez zbędnych informacji, ale informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. Jeśli nie znasz odpowiedzi, poproś o przekształcenie pytania. 
-Oto fragmenty tekstu: [{}] 
+Oto fragmenty tekstu: [{}]
 Pytanie: [{}]""")
         self.client = chromadb.Client()
         self.collection = self.client.get_or_create_collection(name="docs")
@@ -37,6 +43,8 @@ Pytanie: [{}]""")
         self.prompt_to_codellama = """Jesteś modelem AI, którego zadaniem jest generowanie zapytań SQL na podstawie mojego opisu. Twoim celem jest wygenerowanie poprawnego zapytania SQL do bazy danych, składającej się z tabel połączonych ze sobą kolumnami z sufiksem id. Te kolumny są używane wyłącznie do łączenia tabel i nie można ich używać do porównywania danych.
 
 Model nie może używać żadnych danych, które nie zostały bezpośrednio podane w zapytaniu. Model nie może tworzyć ani wymyślać wartości takich jak teacherid, subjectid lub jakichkolwiek innych wartości. Jeśli takie dane są wymagane, ale nie zostały dostarczone w pytaniu, model powinien odpowiedzieć, że nie posiada wystarczających danych do wygenerowania zapytania.
+
+Jako odpowiedź powinieneś napisać tylko zapytanie do bazy dannych
 
 Dodatkowo:
 
@@ -130,18 +138,21 @@ Pytanie: {}
         print(results['documents'])
         data = "\n".join([doc[0] for doc in results['documents']])
 
-        output = ollama.generate(
+        output = self.ask_ollama_server(
             model=self.model,
-            prompt=self.prompt.format(data, question))
+            prompt=self.prompt.format(data, question)
+        )
 
         return output['response']
 
 
     def ask_sql(self, question):
         error = 0
+        print(1)
         for i in range(10):
             response = self.chain.invoke({"question": self.prompt_to_codellama.format(question)})
             try:
+                print(i)
                 answer = self.db.run(self.sql_prompt_extractor(response))
             except:
                 answer = ''
@@ -151,21 +162,16 @@ Pytanie: {}
             error = 1
         if error == 0:
             db_context = self.sql_prompt_extractor(response)
-            db_answer = self.db.run(self.sql_prompt_extractor(response))
-
-            system_message = "Zostanie Ci zadane pytanie i udostępnione dane z bazy danych, które zawierają odpowiedź na to pytanie. Twoim zadaniem jest, korzystając wyłącznie z tych danych, krótko i precyzyjnie odpowiedzieć na pytanie. Nie dodawaj zbędnych informacji i nie udzielaj wyjaśnień — odpowiadaj tylko na temat. Przy przeliczeniu w celu rozdzielenia wykorzystuj przycinek."
-            human_qry_template = HumanMessagePromptTemplate.from_template(
-                """Zostaje Ci zadane pytanie: „{question}”.
+            db_answer = self.db.run(db_context)
+            print(db_context)
+            print(db_answer)
+            human_qry_template = """Zostaje Ci zadane pytanie: „{question}”.
 Otrzymujesz także następujące dane z bazy danych: „{result}”.
 Korzystając wyłącznie z tych danych, które podałem, krótko i precyzyjnie, ale informatywnie odpowiedz na pytanie. Nie dodawaj nic zbędnego i nie udzielaj wyjaśnień — odpowiadaj tylko na temat. Przy przeliczeniu w celu rozdzielenia wykorzystuj przycinek. 
 """
-            )
-            messages = [
-                SystemMessage(content=system_message),
-                human_qry_template.format(question=question, result=db_answer)
-            ]
-            response = self.llm_model_for_sql(messages).content
-            return response
+            print(human_qry_template.format(question=question, result=db_answer))
+            response = self.ask_ollama_server(prompt=human_qry_template.format(question=question, result=db_answer), model="llama3.1")
+            return response['response']
         else:
             return 'Niestety nie udało się znaleść jakiejkolwiek informacji, sprobójcie przeformulować prompt lub zapytajcie o czymś innym'
 
@@ -178,3 +184,30 @@ Korzystając wyłącznie z tych danych, które podałem, krótko i precyzyjnie, 
             answer = self.ask_sql(question)
         json_answer = {'answer': answer}
         return json_answer
+
+    def ask_ollama_server(self, prompt, model):
+        api_url = "http://localhost:9999/api/generate"
+        headers = {"Content-Type": "application/json"}
+        data = {
+            "prompt": prompt,
+            "model": model,
+            "stream": False
+        }
+        print(type(prompt))
+
+        response = self.send_api_request(api_url, headers=headers, data=data)
+
+        return response
+
+
+    def send_api_request(self, api_url, headers=None, data=None):
+        """Отправка HTTP-запроса к API через локальный порт"""
+        try:
+            response = requests.post(api_url, headers=headers, json=data)
+            response.raise_for_status()
+            print(response.text)
+            return response.json()
+        except RequestException as e:
+            print(f"Ошибка при отправке запроса: {e}")
+            return None
+
