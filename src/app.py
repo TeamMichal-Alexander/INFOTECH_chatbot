@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from model import Model
 import os
-import json
+
 
 app = Flask(__name__)
 my_class_instance = Model(pdf_path=os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/język_polski_new.pdf')))

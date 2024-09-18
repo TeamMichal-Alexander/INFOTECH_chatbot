@@ -18,8 +18,7 @@ from langchain_core.messages import (
 from langchain_core.outputs import ChatGeneration, ChatGenerationChunk, ChatResult
 
 from langchain_community.llms.ollama import OllamaEndpointNotFoundError, _OllamaCommon
-import requests
-from requests import RequestException
+from connect import send_api_request
 
 
 @deprecated("0.0.3", alternative="_chat_stream_response_to_chat_generation_chunk")
@@ -33,17 +32,6 @@ def _stream_response_to_chat_generation_chunk(
         message=AIMessageChunk(content=parsed_response.get("response", "")),
         generation_info=generation_info,
     )
-
-
-def send_api_request(api_url, headers=None, data=None):
-    """Отправка HTTP-запроса к API через локальный порт"""
-    try:
-        response = requests.post(api_url, headers=headers, json=data)
-        response.raise_for_status()
-        return response.json()
-    except RequestException as e:
-        print(f"Ошибка при отправке запроса: {e}")
-        return None
 
 
 def _chat_stream_response_to_chat_generation_chunk(
@@ -279,7 +267,6 @@ class ChatOllama(BaseChatModel, _OllamaCommon):
             run_manager: Optional[CallbackManagerForLLMRun] = None,
             **kwargs: Any,
     ) -> ChatResult:
-        """Генерация ответа через вызов API"""
         payload = {
             "model": self.model,
             "prompt": self._convert_messages_to_ollama_messages(messages)[0]['content'],
@@ -297,7 +284,7 @@ class ChatOllama(BaseChatModel, _OllamaCommon):
             )
             return ChatResult(generations=[chat_generation])
         else:
-            raise ValueError("Нет данных в ответе API.")
+            raise ValueError("Nie ma dannych w odpowiedźi API.")
 
     async def _agenerate(
         self,
