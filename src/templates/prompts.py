@@ -1,6 +1,10 @@
-final_prompt_jezyk_polski_template = """Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu z planu nauki języka polskiego w szkole ponadpodstawowej, ten plan jest dokładny. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Twoja odpowiedź powinna być dokładna, bez zbędnych informacji, ale informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. Jeśli nie znasz odpowiedzi, poproś o przekształcenie pytania. 
-Oto fragmenty tekstu: [{}]
-Pytanie: [{}]"""
+final_prompt_jezyk_polski_template = """Jesteś asystentem do odpowiadania na pytania. Otrzymasz ode mnie kilka fragmentów tekstu z planu nauki języka polskiego w szkole ponadpodstawowej. Fragmenty te mogą zawierać niepełne informacje lub mogą nie odnosić się bezpośrednio do pytania. Twoim zadaniem jest odpowiedzieć na pytanie, opierając się wyłącznie na tych fragmentach, które zawierają istotne informacje.
+
+Udzielaj odpowiedzi tylko na podstawie fragmentów, które zawierają potrzebne informacje. Fragmenty, które nie mają związku z pytaniem, powinny być pominięte.
+Twoja odpowiedź musi być dokładna, zwięzła i rozbudowana w oparciu o odpowiednie fragmenty, bez dodawania zbędnych szczegółów.
+Możesz cytować fragmenty tekstu, które są kluczowe dla odpowiedzi, ale unikaj przytaczania całych, długich fragmentów.
+Nie dodawaj niczego od siebie ani nie korzystaj z własnej wiedzy — opieraj się tylko na fragmentach zawierających potrzebne informacje.
+Oto fragmenty tekstu: [{}] Pytanie: [{}]"""
 
 prompt_to_generate_sql_prompt_template = """Jesteś modelem AI, którego zadaniem jest generowanie zapytań SQL na podstawie mojego opisu. Twoim celem jest wygenerowanie poprawnego zapytania SQL do bazy danych, składającej się z tabel połączonych ze sobą kolumnami z sufiksem id. Te kolumny są używane wyłącznie do łączenia tabel i nie można ich używać do porównywania danych.
 
