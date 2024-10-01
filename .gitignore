@@ -1,4 +1,4 @@
 /.idea
 .env
 /expirement
-py_log.log
+*.log
