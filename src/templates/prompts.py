@@ -67,3 +67,45 @@ prompt_to_sql_database_template = """Jesteś modelem AI, którego zadaniem jest 
 final_prompt_with_pdf_template = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu z planu nauki języka polskiego w szkole ponadpodstawowej, ten plan jest dokładny. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Twoja odpowiedź powinna być dokładna, bez zbędnych informacji, ale informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. Jeśli nie znasz odpowiedzi, poproś o przekształcenie pytania. 
         Oto fragmenty tekstu: [{}]
         Pytanie: [{}]""")
+
+
+prompt_to_model_for_chunking_text_template = """Zadanie:
+
+Podziel tekst na fragmenty o długości około 100-150 słów. Jeżeli w tekście pojawia się lista, znajdź nagłówek nad nią i zwróć listę w formacie: || Nagłówek :: Lista ||. Jeśli nie ma nagłówka, zwróć listę w formacie || Bez nagłówka :: Lista ||. Nagłówek to tekst, który znajduje się bezpośrednio przed listą i może być oddzielony jako osobna linia lub kończyć się dwukropkiem.
+
+Przykład działania:
+
+Tekst wejściowy:
+
+Rano:
+Obudzić się.
+Zrobić ćwiczenia.
+Zjeść śniadanie.
+Plany na dzień:
+Iść do sklepu.
+Zakończyć projekt.
+Zorganizować spotkanie.
+Praca nad projektem idzie zgodnie z planem, ale ważne jest, aby pamiętać o kilku kluczowych punktach:
+
+Wyznaczać cele na tydzień.
+Robić codzienne raporty.
+Analizować postępy.
+Oczekiwany rezultat:
+
+|| Rano :: - Obudzić się.
+
+Zrobić ćwiczenia.
+Zjeść śniadanie. ||
+|| Plany na dzień :: - Iść do sklepu.
+
+Zakończyć projekt.
+Zorganizować spotkanie. ||
+Praca nad projektem idzie zgodnie z planem, ale ważne jest, aby pamiętać o kilku kluczowych punktach:
+
+|| Bez nagłówka :: - Wyznaczać cele na tydzień.
+
+Robić codzienne raporty.
+Analizować postępy. ||
+Twój tekst:
+
+{}"""

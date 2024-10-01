@@ -8,7 +8,9 @@ from langchain_community.utilities import SQLDatabase
 from langchain.chains import create_sql_query_chain
 
 from connect import ask_ollama_server
-from templates.prompts import final_prompt_sql_template, prompt_to_sql_database_template, final_prompt_with_pdf_template
+from templates.prompts import final_prompt_sql_template, prompt_to_sql_database_template, final_prompt_with_pdf_template, prompt_to_model_for_chunking_text_template
+from langchain_community.embeddings import OllamaEmbeddings
+
 
 import os
 
@@ -43,10 +45,28 @@ class Model:
         with pdfplumber.open(self.pdf_path) as pdf:
             for page in pdf.pages:
                 text += page.extract_text() + "\n"
-        document = text.split('---')
-        for i in text.split('___'):
-            document.append(i)
-        return document
+        # document = text.split('---')
+        # for i in text.split('___'):
+        #     document.append(i)
+        # return document
+        from llama_index.core.node_parser import (
+            SentenceSplitter,
+            SemanticSplitterNodeParser,
+        )
+        from llama_index.embeddings.ollama import OllamaEmbedding
+        os.environ["OPENAI_API_KEY"] = "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"
+        from llama_index.core import SimpleDirectoryReader
+
+        # load documents
+        documents = SimpleDirectoryReader(input_files=[self.pdf_path]).load_data()
+        splitter = SemanticSplitterNodeParser(
+            buffer_size=1, breakpoint_percentile_threshold=95, embed_model=OllamaEmbedding(model_name=self.model_embedding)
+        )
+        print(type(text))
+        docs = splitter.get_nodes_from_documents(documents)
+        print(len(docs))
+        print([i.get_content() for i in docs][120])
+        return [i.get_content() for i in docs]
 
 
     def _embedding_document(self):
@@ -75,6 +95,9 @@ class Model:
 
         data = "\n".join([doc[0] for doc in results['documents']])
 
+        self.logger.info(f"Chosen chunks: {data}")
+        print(f"Chosen chunks: {data}")
+
         output = self.ollama_generate(
             model=self.model,
             prompt=final_prompt_with_pdf_template.format(data, question)
@@ -92,7 +115,7 @@ class Model:
                     return response
                 else:
                     continue
-            except Exception as e:
+            except Exception:
                 self.logger.info(f'{i} trying was unsuccessfully')
         return None
 
@@ -112,6 +135,7 @@ class Model:
         else:
             return 'Niestety nie udało się znaleść jakiejkolwiek informacji, sprobójcie przeformulować prompt lub zapytajcie o czymś innym'
 
+
     def ask_api(self, _json: dict):
         question = _json.get('question')
         selected_option = _json.get('file')
@@ -121,4 +145,3 @@ class Model:
             answer = self.ask_sql(question)
         json_answer = {'answer': answer}
         return json_answer
-
