@@ -2,3 +2,6 @@
 .env
 /expirement
 py_log.log
+*.pkl
+*.pdf
+*/__pycache__
