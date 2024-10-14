@@ -38,56 +38,81 @@ class Model:
         self.pkl_file = 'jezyk-polski.pkl'
         self.faiss_path = 'content/faiss'
         if self.working_with_ollama_server:
+            # Jeśli pracujemy z serwerem Ollama, importujemy specyficzną funkcję "ChatOllama"
             from copy_ollama_function_ChatOllama import ChatOllama
             self.ollama_generate = ask_ollama_server
         else:
+            # W przeciwnym wypadku korzystamy z funkcji wbudowanej w LangChain
             from langchain_community.chat_models import ChatOllama
             self.ollama_generate = ollama.generate
+        # Tworzymy instancję modelu dla zapytań SQL
         self.llm_model_for_sql = ChatOllama(model='llama3.1')
+        # Ścieżka do zapisu danych ChromaDB
         self.path_to_save_chromadb = os.path.abspath(os.path.join(os.path.dirname(__file__), 'chromadb'))
+        # Inicjalizacja klienta ChromaDB
         self.client = chromadb.HttpClient(host='localhost', port=8001)
+        # Ustawiamy funkcję embeddingu, która korzysta z modelu Ollama
         self.ollama_embedding_for_chromadb = embedding_functions.OllamaEmbeddingFunction(
             url="http://localhost:11434/api/embeddings",
             model_name=self.model_embedding,
         )
+        # Tworzymy kolekcję dokumentów w ChromaDB, jeśli jeszcze nie istnieje
         self.collection = self.client.get_or_create_collection(name="docs", embedding_function=self.ollama_embedding_for_chromadb, metadata={"hnsw:space": "cosine"})
+        # Wczytujemy dokument PDF
         self.document = self._read_document()
+        # Ścieżka do pliku bazy danych SQL
         self.database_filename = os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/plan_lekcji10.db'))
         self.db_path = os.path.join(os.getcwd(), self.database_filename)
+        # Inicjalizacja połączenia z bazą SQL
         self.db = SQLDatabase.from_uri(f"sqlite:///{self.db_path}")
+        # Lista osadzonych dokumentów (embeddingów)
         self.list_of_embeded_document = []
+        # Generowanie embeddingów dla dokumentu
         self._embedding_document()
+        # Tworzenie łańcucha zapytań SQL
         self.chain = create_sql_query_chain(self.llm_model_for_sql, self.db)
+        # Funkcja ekstrakcji zapytań SQL
         self.sql_prompt_extractor = lambda x: x[x.find('SELECT'):] + ";" if x[x.find('SELECT'):].count(';') == 0 else x[x.find('SELECT'):x.rfind(';') + 1]
 
 
     def make_chunking(self) -> list:
+        # Ładowanie danych z pliku PDF
         documents = SimpleDirectoryReader(input_files=[self.pdf_path]).load_data()
+        # Dzielimy dokument na fragmenty za pomocą algorytmu segmentacji semantycznej
         splitter = SemanticSplitterNodeParser(
             buffer_size=3, breakpoint_percentile_threshold=95,
             embed_model=OllamaEmbedding(model_name=self.model_embedding),
         )
+        # Generowanie nodów (fragmentów tekstu)
         docs = splitter.get_nodes_from_documents(documents)
+        # Zapisujemy pocięte dokumenty do pliku pickle
         with open(self.pkl_file, 'wb') as f:
             pickle.dump([i.get_content() for i in docs], f)
+        # Zwracamy treść fragmentów dokumentu
         return [i.get_content() for i in docs]
 
 
     def _read_document(self):
+        # Sprawdzamy, czy plik z osadzonymi fragmentami istnieje
         if not exists(self.pkl_file):
             self.make_chunking()
+        # Ładujemy dane z pliku pickle
         with open(self.pkl_file, 'rb') as f:
             loaded_list = pickle.load(f)
             answer = []
+            # Dodajemy niepusty tekst do listy "answer"
             _ = [answer.append(i) if len(i) > 0 else None for i in loaded_list]
-            descriptions = self.generate_description_for_embedding(answer)
-            for i, descr in enumerate(descriptions):
-                embedding = ollama.embeddings(model=self.model_embedding, prompt=descriptions[descr])["embedding"]
-                self.collection.update(documents=descr, ids=[f'{i}_id'], embeddings=[embedding], metadatas=[{"full_document": descriptions[descr]}])
+            # Generujemy opisy dla embeddingu
+            # descriptions = self.generate_description_for_embedding(answer)
+            # # Dla każdego opisu generujemy embedding i aktualizujemy kolekcję w ChromaDB
+            # for i, descr in enumerate(descriptions):
+            #     embedding = ollama.embeddings(model=self.model_embedding, prompt=descriptions[descr])["embedding"]
+            #     self.collection.update(documents=descr, ids=[f'{i}_id'], embeddings=[embedding], metadatas=[{"full_document": descriptions[descr]}])
             return answer
 
 
     def generate_description_for_embedding(self, data):
+        # Generujemy krótkie opisy dla każdego fragmentu tekstu
         dictionary_of_chunks = {}
         for i, text in enumerate(data):
             key = self.ollama_generate(model=self.model, prompt=prompt_to_generate_shorter_text_for_embedding_template.format(text))['response']
@@ -98,16 +123,20 @@ class Model:
 
     def _embedding_document(self):
         try:
+            # Pobieramy dane z kolekcji w ChromaDB
             data = self.collection.get()
             print(data)
             keys, values = data['documents'], list([i['full_document'] for i in data['metadatas']])
             print(len(keys), len(values))
+            # Sprawdzamy, czy liczba kluczy (opisów) i wartości (dokumentów) się zgadza
             if len(keys) != len(values):
                 raise 'len of description not equal len of document'
+            # Tworzymy słownik fragmentów
             for key, value in zip(keys, values):
                 self.dict_of_chunks[key] = value
             print('all')
         except Exception as e:
+            # Jeśli wystąpi błąd, ponownie wczytujemy dane i aktualizujemy kolekcję
             with open(self.pkl_file, 'rb') as f:
                 loaded_list = pickle.load(f)
                 answer = []
@@ -128,19 +157,24 @@ class Model:
                 print('all')
 
     def collection_is_empty(self):
+        # Sprawdzamy, czy kolekcja w ChromaDB jest pusta
         all_data = self.collection.peek(limit=1)
         return len(all_data['ids']) == 0
 
 
     def ask_pdf(self, question: str) -> str:
+        # Tworzymy embedding pytania
         embedding_of_question = ollama.embeddings(model=self.model_embedding, prompt=question)["embedding"]
+        # Wyszukujemy najbardziej pasujące dokumenty
         matched_docs = self.collection.query(query_embeddings=[embedding_of_question], n_results=5)
         print(matched_docs)
         print(matched_docs['documents'])
+        # Zwracamy dopasowane dokumenty
         matched_docs = [i['full_document'] for i in matched_docs['metadatas'][0]]
         matched_docs = [f'{i+1} fragment tekstu: ' + text for i, text in enumerate(matched_docs)]
         matched_docs = "\n\n".join(matched_docs)
         print(matched_docs)
+        # Generujemy odpowiedź na pytanie na podstawie fragmentów dokumentu
         output = self.ollama_generate(
             model=self.model,
             prompt=final_prompt_with_pdf_template.format(matched_docs, question)
@@ -151,7 +185,9 @@ class Model:
     def _generate_prompt_to_sql(self, question):
         for i in range(20):
             try:
+                # Wysyłamy zapytanie do łańcucha SQL
                 response = self.chain.invoke({"question": prompt_to_sql_database_template.format(question)})
+                # Jeśli zapytanie SQL zwróci dane, generujemy odpowiedź
                 answer = self.db.run(self.sql_prompt_extractor(response))
                 if len(answer) > 0:
                     return response
@@ -163,22 +199,27 @@ class Model:
 
 
     def ask_sql(self, question):
+        # Tworzymy zapytanie do bazy SQL
         response = self._generate_prompt_to_sql(question)
         if response:
+            # Tworzymy odpowiedź na podstawie zapytania SQL
             db_context = self.sql_prompt_extractor(response)
             db_answer = self.db.run(db_context)
             self.logger.info(db_context)
             self.logger.info(db_answer)
+            # Generujemy odpowiedź w zależności od serwera Ollama
             if self.working_with_ollama_server:
                 response = self.ollama_generate(prompt=final_prompt_sql_template.format(question=question, result=db_answer, request_to_sql=db_context), model=self.model)
             else:
                 response = ollama.generate(prompt=final_prompt_sql_template.format(question=question, result=db_answer, request_to_sql=db_context), model=self.model)
             return response['response']
         else:
+            # Jeśli zapytanie SQL się nie powiedzie, zwracamy odpowiedź błędną
             return 'Niestety nie udało się znaleść jakiejkolwiek informacji, sprobójcie przeformulować prompt lub zapytajcie o czymś innym'
 
 
     def ask_api(self, _json: dict):
+        # Wybieramy odpowiednią metodę odpowiedzi na podstawie typu pliku
         question = _json.get('question')
         selected_option = _json.get('file')
         if selected_option == "polski":
