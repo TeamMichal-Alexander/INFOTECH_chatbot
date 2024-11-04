@@ -8,6 +8,7 @@ my_class_instance=None
 def create_model_instance():
     global my_class_instance
     if my_class_instance is None:
+        os.environ["OPENAI_API_KEY"] = ''
         my_class_instance = Model(pdf_path=os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/język_polski_new.pdf')), working_with_ollama_server=False)
 
 @app.route('/api/model/ask', methods=['POST'])
