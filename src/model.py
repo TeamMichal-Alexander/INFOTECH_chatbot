@@ -14,9 +14,13 @@ from openai import OpenAI
 
 from langchain_community.utilities import SQLDatabase
 from langchain.chains import create_sql_query_chain
+from langchain_unstructured import UnstructuredLoader
+
 
 from connect import ask_ollama_server
 from templates.prompts import *
+from langchain_experimental.text_splitter import SemanticChunker
+from langchain.embeddings import OpenAIEmbeddings
 from langchain_community.embeddings import OllamaEmbeddings
 import pickle
 from llama_index.core.node_parser import SemanticSplitterNodeParser
@@ -37,7 +41,7 @@ class Model:
         self.client_openai = OpenAI()
         self.model_embedding = "text-embedding-3-large"
         self.model = "llama3.1"
-        self.pkl_file = 'jezyk-polski.pkl'
+        self.pkl_file = 'jezyk-polski_new.pkl'
         self.faiss_path = 'content/faiss'
         if self.working_with_ollama_server:
             # Jeśli pracujemy z serwerem Ollama, importujemy specyficzną funkcję "ChatOllama"
@@ -57,11 +61,11 @@ class Model:
         #     model_name=self.model_embedding,
         # )
         self.ollama_embedding_for_chromadb = embedding_functions.OpenAIEmbeddingFunction(
-            api_key="",
+            api_key=os.environ.get('OPENAI_API_KEY'),
             model_name="text-embedding-3-large"
         )
         # Tworzymy kolekcję dokumentów w ChromaDB, jeśli jeszcze nie istnieje
-        self.collection = self.client.get_or_create_collection(name="docs_openai", embedding_function=self.ollama_embedding_for_chromadb, metadata={"hnsw:space": "cosine"})
+        self.collection = self.client.get_or_create_collection(name="docs_openai_unstructured", embedding_function=self.ollama_embedding_for_chromadb, metadata={"hnsw:space": "cosine"})
         # Wczytujemy dokument PDF
         self.document = self._read_document()
         # Ścieżka do pliku bazy danych SQL
@@ -92,20 +96,32 @@ class Model:
             return ollama.generate(prompt=text, model=model)['response']
 
     def make_chunking(self) -> list:
-        # Ładowanie danych z pliku PDF
-        documents = SimpleDirectoryReader(input_files=[self.pdf_path]).load_data()
-        # Dzielimy dokument na fragmenty za pomocą algorytmu segmentacji semantycznej
-        splitter = SemanticSplitterNodeParser(
-            buffer_size=3, breakpoint_percentile_threshold=95,
-            embed_model=OpenAIEmbeddings(),
+        loader = UnstructuredLoader(
+            file_path=self.pdf_path,
+            api_key=os.getenv("UNSTRUCTURED_API_KEY"),
+            partition_via_api=True,
         )
-        # Generowanie nodów (fragmentów tekstu)
-        docs = splitter.get_nodes_from_documents(documents)
-        # Zapisujemy pocięte dokumenty do pliku pickle
+
+        docs = loader.load()
+        text = ''
+        for element in docs:
+            if element.metadata['category'] == "Title":
+                text += f'\n\n{element.page_content}'
+            elif element.metadata['category'] == "Table":
+                text += f'\n{element.page_content}'
+            else:
+                text += f' {element.page_content}'
+
+        text_splitter = SemanticChunker(
+            OpenAIEmbeddings(model="text-embedding-3-large"),
+            buffer_size=5,
+            sentence_split_regex=r"(?<=[.?!;])\s+",
+            breakpoint_threshold_type="gradient"
+        )
+        docs_splited = [i.page_content for i in text_splitter.create_documents([text])]
         with open(self.pkl_file, 'wb') as f:
-            pickle.dump([i.get_content() for i in docs], f)
-        # Zwracamy treść fragmentów dokumentu
-        return [i.get_content() for i in docs]
+            pickle.dump(docs_splited, f)
+        return docs_splited
 
 
     def _read_document(self):
@@ -123,7 +139,7 @@ class Model:
             # Dla każdego opisu generujemy embedding i aktualizujemy kolekcję w ChromaDB
             # for i, descr in enumerate(answer):
             #     embedding = self.embedding_function(descr)
-            #     self.collection.update(documents=descr, ids=[f'{i}_id'], embeddings=[embedding], metadatas=[{"full_document": descr}])
+            #     self.collection.add(documents=descr, ids=[f'{i}_id'], embeddings=[embedding], metadatas=[{"full_document": descr}])
             #     print(i)
             return answer
 
@@ -176,6 +192,7 @@ class Model:
                 for key, value in zip(keys, values):
                     self.dict_of_chunks[key] = value
                 print('all')
+
 
     def collection_is_empty(self):
         # Sprawdzamy, czy kolekcja w ChromaDB jest pusta
