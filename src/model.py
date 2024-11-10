@@ -15,6 +15,7 @@ from openai import OpenAI
 from langchain_community.utilities import SQLDatabase
 from langchain.chains import create_sql_query_chain
 from langchain_unstructured import UnstructuredLoader
+from langchain_core.documents import Document
 
 
 from connect import ask_ollama_server
@@ -27,9 +28,8 @@ from llama_index.core.node_parser import SemanticSplitterNodeParser
 from langchain_openai import OpenAIEmbeddings
 from llama_index.core import SimpleDirectoryReader
 
-
-
 import os
+
 
 class Model:
     def __init__(self, pdf_path: str, working_with_ollama_server):
@@ -40,8 +40,8 @@ class Model:
         self.dict_of_chunks = {}
         self.client_openai = OpenAI()
         self.model_embedding = "text-embedding-3-large"
-        self.model = "llama3.1"
-        self.pkl_file = 'jezyk-polski_new.pkl'
+        self.model = "llama3.2"
+        self.pkl_file = 'jezyk-polski_new_unstructured_without_tables2.pkl'
         self.faiss_path = 'content/faiss'
         if self.working_with_ollama_server:
             # Jeśli pracujemy z serwerem Ollama, importujemy specyficzną funkcję "ChatOllama"
@@ -65,7 +65,7 @@ class Model:
             model_name="text-embedding-3-large"
         )
         # Tworzymy kolekcję dokumentów w ChromaDB, jeśli jeszcze nie istnieje
-        self.collection = self.client.get_or_create_collection(name="docs_openai_unstructured", embedding_function=self.ollama_embedding_for_chromadb, metadata={"hnsw:space": "cosine"})
+        self.collection = self.client.get_or_create_collection(name="jezyk-polski-final", embedding_function=self.ollama_embedding_for_chromadb, metadata={"hnsw:space": "cosine"})
         # Wczytujemy dokument PDF
         self.document = self._read_document()
         # Ścieżka do pliku bazy danych SQL
@@ -75,8 +75,6 @@ class Model:
         self.db = SQLDatabase.from_uri(f"sqlite:///{self.db_path}")
         # Lista osadzonych dokumentów (embeddingów)
         self.list_of_embeded_document = []
-        # Generowanie embeddingów dla dokumentu
-        self._embedding_document()
         # Tworzenie łańcucha zapytań SQL
         self.chain = create_sql_query_chain(self.llm_model_for_sql, self.db)
         # Funkcja ekstrakcji zapytań SQL
@@ -87,13 +85,41 @@ class Model:
         data = self.client_openai.embeddings.create(input=text, model=model)
         return data.data[0].embedding
 
+        # return ollama.embeddings(model='nomic-embed-text', prompt=text)['embedding']
+
+        # from transformers import AutoModel
+        # model = AutoModel.from_pretrained("jinaai/jina-embeddings-v3", trust_remote_code=True)
+        # embeddings = model.encode(text, task="text-matching", truncate_dim=2048)
+        # return embeddings.astype(float).tolist()
+
+        # from sentence_transformers import SentenceTransformer
+        #
+        # auto_model = SentenceTransformer("Alibaba-NLP/gte-Qwen1.5-7B-instruct", trust_remote_code=True)
+        # query_embeddings = model.encode([text], prompt_name="query")
+        # print(query_embeddings)
+        # print(len(query_embeddings))
+        # return query_embeddings.tolist()[0]
+
 
     def generation_function(self, text, model=None):
-        model = model or self.model
-        if self.working_with_ollama_server:
-            return ask_ollama_server(prompt=text, model=model)['response']
-        else:
-            return ollama.generate(prompt=text, model=model)['response']
+        # model = model or self.model
+        # if self.working_with_ollama_server:
+        #     return ask_ollama_server(prompt=text, model=model)['response']
+        # else:
+        #     return ollama.generate(prompt=text, model=model)['response']
+        client = OpenAI()
+
+        completion = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {
+                    "role": "user",
+                    "content": text
+                }
+            ]
+        )
+        return completion.choices[0].message.content
 
     def make_chunking(self) -> list:
         loader = UnstructuredLoader(
@@ -104,13 +130,15 @@ class Model:
 
         docs = loader.load()
         text = ''
+        tables = []
         for element in docs:
             if element.metadata['category'] == "Title":
-                text += f'\n\n{element.page_content}'
+                text += f'.\n\n{element.page_content}'
             elif element.metadata['category'] == "Table":
-                text += f'\n{element.page_content}'
+                temp_text = element.metadata["text_as_html"].replace('<', ' <').replace('>', '> ')
+                tables.append(temp_text)
             else:
-                text += f' {element.page_content}'
+                text += f'. {element.page_content}'
 
         text_splitter = SemanticChunker(
             OpenAIEmbeddings(model="text-embedding-3-large"),
@@ -119,6 +147,7 @@ class Model:
             breakpoint_threshold_type="gradient"
         )
         docs_splited = [i.page_content for i in text_splitter.create_documents([text])]
+        docs_splited += tables
         with open(self.pkl_file, 'wb') as f:
             pickle.dump(docs_splited, f)
         return docs_splited
@@ -134,13 +163,13 @@ class Model:
             answer = []
             # Dodajemy niepusty tekst do listy "answer"
             _ = [answer.append(i) if len(i) > 0 else None for i in loaded_list]
-            # # Generujemy opisy dla embeddingu
-            # descriptions = self.generate_description_for_embedding(answer)
             # Dla każdego opisu generujemy embedding i aktualizujemy kolekcję w ChromaDB
-            # for i, descr in enumerate(answer):
-            #     embedding = self.embedding_function(descr)
-            #     self.collection.add(documents=descr, ids=[f'{i}_id'], embeddings=[embedding], metadatas=[{"full_document": descr}])
-            #     print(i)
+            if len(self.collection.get()['documents']) == 0:
+                print(len(answer))
+                for i, descr in enumerate(answer):
+                    embedding = self.embedding_function(descr)
+                    self.collection.add(documents=descr, ids=[f'{i}_id'], embeddings=[embedding])
+                    print(i)
             return answer
 
 
@@ -156,44 +185,6 @@ class Model:
         return dictionary_of_chunks
 
 
-    def _embedding_document(self):
-        try:
-            # Pobieramy dane z kolekcji w ChromaDB
-            data = self.collection.get()
-            print(data)
-            keys, values = data['documents'], list([i['full_document'] for i in data['metadatas']])
-            print(len(keys), len(values))
-            # Sprawdzamy, czy liczba kluczy (opisów) i wartości (dokumentów) się zgadza
-            if len(keys) != len(values):
-                raise 'len of description not equal len of document'
-            # Tworzymy słownik fragmentów
-            for key, value in zip(keys, values):
-                self.dict_of_chunks[key] = value
-            print('all')
-        except Exception as e:
-            print(e)
-            # Jeśli wystąpi błąd, ponownie wczytujemy dane i aktualizujemy kolekcję
-            with open(self.pkl_file, 'rb') as f:
-                loaded_list = pickle.load(f)
-                answer = []
-                _ = [answer.append(i) if len(i) > 0 else None for i in loaded_list]
-                descriptions = self.generate_description_for_embedding(answer)
-                for i, descr in enumerate(descriptions):
-                    # embedding = ollama.embeddings(model=self.model_embedding, prompt=descriptions[descr])["embedding"]
-                    embedding = self.embedding_function(descriptions[descr])
-                    self.collection.update(documents=descr, ids=[f'{i}_id'], embeddings=[embedding],
-                                           metadatas=[{"full_document": descriptions[descr]}])
-                data = self.collection.get()
-                print(data)
-                keys, values = data['documents'], list([i['full_document'] for i in data['metadatas']])
-                print(len(keys), len(values))
-                if len(keys) != len(values):
-                    raise 'len of description not equal len of document'
-                for key, value in zip(keys, values):
-                    self.dict_of_chunks[key] = value
-                print('all')
-
-
     def collection_is_empty(self):
         # Sprawdzamy, czy kolekcja w ChromaDB jest pusta
         all_data = self.collection.peek(limit=1)
@@ -206,12 +197,9 @@ class Model:
         embedding_of_question = self.embedding_function(question)
         # Wyszukujemy najbardziej pasujące dokumenty
         matched_docs = self.collection.query(query_embeddings=[embedding_of_question], n_results=5)
-        print(matched_docs)
-        print(matched_docs['documents'])
         # Zwracamy dopasowane dokumenty
-        matched_docs = [i['full_document'] for i in matched_docs['metadatas'][0]]
-        matched_docs = [f'{i+1} fragment tekstu: ' + text for i, text in enumerate(matched_docs)]
-        matched_docs = "\n\n".join(matched_docs)
+        matched_docs = matched_docs['documents'][0]
+        matched_docs = "\n\n".join([f'{i+1} fragment tekstu: ' + str(text) for i, text in enumerate(matched_docs)])
         print(matched_docs)
         # Generujemy odpowiedź na pytanie na podstawie fragmentów dokumentu
         output = self.generation_function(final_prompt_with_pdf_template.format(matched_docs, question))
