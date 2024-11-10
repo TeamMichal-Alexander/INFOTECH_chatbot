@@ -64,7 +64,7 @@ prompt_to_sql_database_template = """Jesteś modelem AI, którego zadaniem jest 
                 Pytanie: {}
                 """
 
-final_prompt_with_pdf_template = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu z planu nauki języka polskiego w szkole ponadpodstawowej, ten plan jest dokładny. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu, ale niektóre fragmenty tekstu mogą nie pasować do pytania lub zawierac kompletnie inną informację. Możesz korzystać się z kilku fragmentów dla swojej odpowiedzi. Fragmenty tekstu będą rozdzielony dwoma Enter'ami lub \n\n. Niektóre fragmenty mogą zawierać podszebną informację, ale jeszcze niepodszebną, dlatego możesz jeżeli takie fragmenty będą podane, znaleść w nich podszebną informacę i skorzystać się z niej. Twoja odpowiedź powinna być dokładna, informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. 
+final_prompt_with_pdf_template = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu które mogą zawierac w sobie odpowiedz na pytania. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Możesz korzystać się z kilku fragmentów dla swojej odpowiedzi. Fragmenty tekstu będą rozdzielony dwoma Enter'ami lub \n\n. Możesz połączyć informację z tych fragmentów tekstu żeby mieć pełną odpowiedź. Twoja odpowiedź musi być dokładna, informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. 
         Oto fragmenty tekstu: [{}]
         Pytanie: [{}]""")
 

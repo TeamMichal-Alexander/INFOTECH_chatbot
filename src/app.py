@@ -1,4 +1,4 @@
-from model import Model
+from model import Communication, Models, Files
 import os
 from flask import Flask, request, jsonify
 import os
@@ -17,7 +17,11 @@ def create_model_instance():
             load_dotenv(dotenv_path)
         os.environ["OPENAI_API_KEY"] = os.environ.get('OPENAI_API_KEY')
         os.environ["UNSTRUCTURED_API_KEY"] = os.environ.get('UNSTRUCTURED_API_KEY')
-        my_class_instance = Model(pdf_path=os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/historia2.pdf')), working_with_ollama_server=False)
+
+        working_with_ollama_server = False
+
+        files = Files(['historia2'], working_with_ollama_server)
+        my_class_instance = Communication(pdf_path=os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/historia2.pdf')), working_with_ollama_server=working_with_ollama_server, files=files)
 
 @app.route('/api/model/ask', methods=['POST'])
 def action():
