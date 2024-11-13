@@ -130,6 +130,7 @@ class Models:
     def __init__(self, working_with_ollama_server):
         self.client_openai = OpenAI()
         self.model_embedding = "text-embedding-3-large"
+        self.model = "llama3.1"
         self.working_with_ollama_server = working_with_ollama_server
 
 
@@ -160,6 +161,7 @@ class Models:
         #     return ask_ollama_server(prompt=text, model=model)['response']
         # else:
         #     return ollama.generate(prompt=text, model=model)['response']
+
         client = OpenAI()
 
         completion = client.chat.completions.create(
@@ -212,7 +214,7 @@ class Communication:
         # Tworzymy kolekcję dokumentów w ChromaDB, jeśli jeszcze nie istnieje
         self.collection = self.client.get_or_create_collection(name="jezyk-polski-final", embedding_function=self.ollama_embedding_for_chromadb, metadata={"hnsw:space": "cosine"})
         # Wczytujemy dokument PDF
-        self.document = self.Files.add_new_file('jezyk-polski')
+        self.document = self.Files.add_new_file('fizyka2')
         # Ścieżka do pliku bazy danych SQL
         self.database_filename = os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/plan_lekcji10.db'))
         self.db_path = os.path.join(os.getcwd(), self.database_filename)
@@ -228,7 +230,7 @@ class Communication:
 
     def ask_pdf(self, question: str) -> str:
         # Wyszukujemy najbardziej pasujące dokumenty
-        matched_docs = self.Files.search_most_relevant_pieces_of_text(question, 5)
+        matched_docs = self.Files.search_most_relevant_pieces_of_text(question, 15)
         # Zwracamy dopasowane dokumenty
         matched_docs = "\n\n".join([f'{i+1} fragment tekstu: ' + str(text) for i, text in enumerate(matched_docs)])
         print(matched_docs)
@@ -273,9 +275,11 @@ class Communication:
         # Wybieramy odpowiednią metodę odpowiedzi na podstawie typu pliku
         question = _json.get('question')
         selected_option = _json.get('file')
-        if selected_option == "polski":
+        if selected_option == "pdfs":
             answer = self.ask_pdf(question)
-        else:
+        elif selected_option == "lekcji":
             answer = self.ask_sql(question)
+        else:
+            answer = 'Wystąpił błąd, spróbuj ponownie'
         json_answer = {'answer': answer}
         return json_answer
