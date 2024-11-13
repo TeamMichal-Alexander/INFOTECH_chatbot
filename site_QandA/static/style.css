@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body, div, p, form{
     display: flex;
     justify-content: center;
@@ -17,4 +22,23 @@ input {
 
 #inside_div {
     margin: 15px;
+}
+
+#action-button {
+    display: none;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#form_improve {
+    display: none;
+}
+
+.form_row {
+    display: flex;
+    flex-direction: row;
 }
