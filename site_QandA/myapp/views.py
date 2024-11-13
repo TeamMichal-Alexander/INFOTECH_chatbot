@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import requests
 from django.http import JsonResponse
+import markdown
+
 
 # Create your views here.
 from django.shortcuts import render
@@ -17,6 +19,7 @@ def query_view(request):
             if response.status_code == 200:
                 data = response.json()
                 result = data.get('answer')
+                result = markdown.markdown(result)
             else:
                 result = 'failed'
 

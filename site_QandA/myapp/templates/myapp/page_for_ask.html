@@ -18,7 +18,7 @@
     {% if result %}
         <div id="inside_div">
             <h2>Odpowiedź</h2>
-            <h2>{{ result }}</h2>
+            <div>{{ result|safe }}</div>
         </div>
     {% endif %}
     </div>
