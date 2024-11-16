@@ -5,5 +5,8 @@ class QueryForm(forms.Form):
         ('pdfs', 'Pliki pdf'),
         ('lekcji', 'Plan lekcji'),
     ]
-    choice_field = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect, label="Wybieżcie plik")
-    query = forms.CharField(label='Wprowadźcie prośbę do modelej AI', max_length=100)
+    choice_field = forms.ChoiceField(choices=CHOICES, label="Wybieżcie plik")
+    query = forms.CharField(label='Wprowadźcie prośbę do modelej AI', max_length=300)
+
+class ImproveForm(forms.Form):
+    text_field = forms.CharField(max_length=300, widget=forms.TextInput(attrs={'id': 'improve_textfield', 'placeholder': 'Wprowadź prompt'}))
