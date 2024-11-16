@@ -3,17 +3,31 @@
     padding: 0;
 }
 
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #E7E8D1;
+}
+
 body, div, p, form{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column
+    flex-direction: column;
+    margin: 0;
 }
 
 #answer {
-    background-color: bisque;
-    width: 50%;
-    border-radius: 10px
+    display: none;
+    flex-shrink: 1;
+    background-color: #A7BEAE;
+    width: 80%;
+    max-height: 90%;
+    overflow-y: scroll;
+    min-width: 300px;
+    padding: 20px;
+    border-radius: 13px;
+    margin-bottom: 10px;
 }
 
 input {
@@ -41,4 +55,214 @@ input {
 .form_row {
     display: flex;
     flex-direction: row;
+}
+
+div.main {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+div.panel {
+    width: 60vw;
+    max-height: 400px;
+    min-width: 500px;
+    min-height: 40px;
+    background-color: #A7BEAE;
+    bottom: 10px;
+    border-radius: 20px;
+    margin: 10px 0;
+    flex-shrink: 0;
+}
+
+div.quotation {
+    display: none;
+    width: calc(100% - 14px);
+    margin: 7px;
+    box-sizing: border-box;
+    -moz-border-radius: 13px 13px 5px 5px;
+    -webkit-border-radius: 13px 13px 5px 5px;
+    background-color: #849589;
+}
+
+div.quotation > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: calc(100% - 16px);
+    height: 100%;
+    margin: 0 8px;
+}
+
+div.delete_quotation div.quotation_symbol{
+    width: 5%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#delete_quotation {
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    box-shadow: none;
+    border: none;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+}
+
+
+div.quotation_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    width: 90%;
+    height: 100%;
+}
+
+div.quotation_text > p {
+    display: block;
+    box-sizing: border-box;
+    width: calc(100% - 7px);
+    white-space: nowrap;       /* Запрещаем перенос текста */
+    overflow: hidden;          /* Скрываем лишний текст */
+    text-overflow: ellipsis;
+}
+
+
+div.panel > div {
+    height: 100%;
+    width: 100%;
+}
+
+div.panel > div > form {
+    width: 100%;
+}
+
+div.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+    width: 100%;
+}
+
+
+div.char_field{
+    width: 70%;
+    height: 100%;
+    margin: 0 5px 3px 5px;
+}
+
+div.char_field > input {
+    margin: 0;
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    min-width: 250px;
+    background-color: #A7BEAE;
+    box-shadow: none;
+    border: none;
+    resize: none;
+}
+
+div.char_field > input:focus {
+    outline: none;
+}
+
+div.char_field > input::placeholder {
+    color: rgba(81, 81, 81, 0.7);
+}
+
+div.choose_field {
+    margin-left: 7px;
+    margin-bottom: 7px;
+    width: 105px;
+    height: 26px;
+    position: relative;
+    display: inline-block;
+}
+
+#choice_field {
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #B85042 url('../static/arrow.png') no-repeat right 8px center;
+    background-size: auto 50%;
+    border-radius: 13px;
+    height: 100%;
+    width: 100%;
+    color: white;
+    border: none;
+    padding-left: 8px;
+    resize: vertical;
+}
+
+#choice_field:focus {
+    outline: none;
+}
+
+div.button_submit {
+    width: 67px;
+    margin-bottom: 7px;
+    margin-right: 7px;
+}
+
+div.button_submit > button {
+    border: none;
+    outline: none;
+    width: 67px;
+    height: 26px;
+    border-radius: 13px;
+    box-shadow: none;
+    background-color: #B85042;
+    color: white;
+}
+
+
+#loader {
+    display: none;
+    margin: 15px;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+.loader {
+  height: 100%;
+  aspect-ratio: 4;
+  --_g: no-repeat radial-gradient(farthest-side,#000 90%,#0000);
+  background:
+    var(--_g) left,
+    var(--_g) right;
+  background-size: 25% 100%;
+  display: grid;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  height: inherit;
+  aspect-ratio: 1;
+  grid-area: 1/1;
+  margin: auto;
+  border-radius: 50%;
+  transform-origin: -100% 50%;
+  background: #000;
+  animation: l49 1s infinite linear;
+}
+.loader:after {
+  transform-origin: 200% 50%;
+  --s:-1;
+  animation-delay: -.5s;
+}
+
+@keyframes l49 {
+  58%,
+  100% {transform: rotate(calc(var(--s,1)*1turn))}
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
     <title>Запрос</title>
     {% load static %}
@@ -8,25 +8,108 @@
 </head>
 <body>
     <h1>Wybierz plik i zapytaj</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Odesłać</button>
-    </form>
     <br>
     <button id="action-button">Zmień</button>
-    <div id="answer">
-    {% if result %}
-        <div id="inside_div">
-            <h2>Odpowiedź</h2>
-            <div>{{ result|safe }}</div>
+    <div class="main">
+        <div id="answer">
+                <div id="inside_div">
+                    <h2>Odpowiedź</h2>
+                    <div id="result-container">{{ result|safe }}</div>
+                </div>
         </div>
-    {% endif %}
+        <div id="loader">
+            <div class="loader"></div>
+        </div>
+        <div class="panel">
+            <div>
+                <div class="quotation" id="quotation">
+                    <div>
+                        <div class="quotation_symbol">
+                            <p>↪</p>
+                        </div>
+                        <div class="quotation_text">
+                             <p id="quotation_text"></p>
+                        </div>
+                        <div class="delete_quotation">
+                            <button type="button" id="delete_quotation" onclick="delete_quotation()">x</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                {% csrf_token %}
+                <form method="post">
+                    <div class="form">
+                        <div class="choose_field">
+                            <select name="choice_field" id="choice_field">
+                                <option value="pdfs">Pliki pdf</option>
+                                <option value="lekcji">Plan lekcji</option>
+                            </select>
+                        </div>
+                        <div class="char_field">
+                            <input type="text" name="query" id="query" placeholder="Wyślij zapytanie do modeli">
+                        </div>
+                        <div class="button_submit">
+                            <button type="button" onclick="sendAjaxRequest()">Zadaj</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="{% static 'page_for_ask.js' %}"></script>
+    <script>
+        function sendAjaxRequest() {
+        const query = document.getElementById('query').value;
+        const choiceField = document.getElementById('choice_field').value;
+        const quotation_text = document.getElementById('quotation_text').innerText;
+        const loader = document.getElementById('loader');
+
+        console.log(query);
+        console.log(choiceField);
+        console.log(quotation_text);
+        loader.style.display = 'block';
+
+        fetch("{% url 'handle_query' %}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}",
+                "X-Requested-With": "XMLHttpRequest" // Указание, что это AJAX-запрос
+            },
+            body: JSON.stringify({
+                query: query,
+                choice_field: choiceField,
+                quotation_text: quotation_text
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json(); // Читаем тело только один раз
+        })
+        .then(data => {
+            // Обновляем результат на странице
+            const resultContainer = document.getElementById('result-container');
+            const answer_div = document.getElementById('answer')
+            answer_div.style.display = 'block'
+            console.log(data);
+            if (data.success) {
+                resultContainer.innerHTML = data.result; // Предполагаем, что результат содержит HTML
+            } else {
+                resultContainer.textContent = "Ошибка: " + data.error;
+            }
+            loader.style.display = 'none';
+        })
+        .catch(error => {
+            console.error("Ошибка при отправке запроса:", error);
+        });
+    }
+    </script>
 
 </body>
 </html>
