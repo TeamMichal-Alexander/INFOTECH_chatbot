@@ -5,6 +5,7 @@
 
 body {
     height: 100vh;
+    height: 100svh;
     width: 100vw;
     background-color: #E7E8D1;
 }
@@ -22,12 +23,31 @@ body, div, p, form{
     flex-shrink: 1;
     background-color: #A7BEAE;
     width: 80%;
-    max-height: 90%;
+    max-height: 95%;
     overflow-y: scroll;
     min-width: 300px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 13px;
-    margin-bottom: 10px;
+}
+
+div.UserAnswer {
+    margin: 10px 10% 0 10%;
+}
+
+div.UserQuestion {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: center;
+    width: 100%;
+}
+
+div.UserQuestion > div {
+    background-color: #9aaea0;
+    width: 50%;
+    min-width: 200px;
+    border-radius: 22px;
+    padding: 10px;
 }
 
 input {
@@ -36,6 +56,10 @@ input {
 
 #inside_div {
     margin: 15px;
+}
+
+#inside_div > div {
+    margin: 10px 0;
 }
 
 #action-button {
@@ -58,15 +82,32 @@ input {
 }
 
 div.main {
-    height: 90%;
+    padding-top: 2.5%;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hi_text {
+    margin-bottom: 5%;
+}
+
+#hi_text > h1 {
+    font-family: "Doto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 550;
+      font-style: normal;
+      font-variation-settings:
+        "ROND" 0;
 }
 
 div.panel {
-    width: 60vw;
+    width: 80%;
     max-height: 400px;
-    min-width: 500px;
+    min-width: 300px;
     min-height: 40px;
     background-color: #A7BEAE;
     bottom: 10px;
@@ -166,7 +207,7 @@ div.char_field > input {
     width: 100%;
     max-height: 100%;
     overflow: hidden;
-    min-width: 250px;
+    min-width: 100px;
     background-color: #A7BEAE;
     box-shadow: none;
     border: none;
@@ -199,6 +240,7 @@ div.choose_field {
     border-radius: 13px;
     height: 100%;
     width: 100%;
+    min-width: 100px;
     color: white;
     border: none;
     padding-left: 8px;
@@ -215,7 +257,7 @@ div.button_submit {
     margin-right: 7px;
 }
 
-div.button_submit > button {
+#button_submit_form {
     border: none;
     outline: none;
     width: 67px;
@@ -226,12 +268,19 @@ div.button_submit > button {
     color: white;
 }
 
+#button_submit_form:disabled {
+    background-color: #afafaf;
+}
+
+#button_submit_form:active {
+    box-shadow: inset 0px 0px 10px -3px rgb(0, 0, 0);
+}
 
 #loader {
     display: none;
-    margin: 15px;
     height: 10px;
     flex-shrink: 0;
+    margin: 15px 15px 15px 10%;
 }
 
 .loader {
@@ -265,4 +314,21 @@ div.button_submit > button {
 @keyframes l49 {
   58%,
   100% {transform: rotate(calc(var(--s,1)*1turn))}
+}
+
+@media (max-width: 650px) {
+    div.button_submit {
+        width: 26px;
+    }
+    #button_submit_form {
+        border: none;
+        outline: none;
+        width: 26px;
+        height: 26px;
+        border-radius: 13px;
+        box-shadow: none;
+        background: #B85042 url("../static/up-arrow.png") no-repeat center center;
+        background-size: auto 70%;
+        color: rgba(0, 0, 0, 0);
+    }
 }

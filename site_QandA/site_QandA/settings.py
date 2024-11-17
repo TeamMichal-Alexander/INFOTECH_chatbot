@@ -123,6 +123,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Проверьте, что путь к статическим файлам верен
 ]
+
+ALLOWED_HOSTS = ['192.168.1.33', '127.0.0.1']
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

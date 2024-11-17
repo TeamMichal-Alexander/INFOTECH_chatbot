@@ -7963,3 +7963,864 @@
 [36mDEBUG[0m:    [16-11-2024 15:40:25] Collection fizyka2 already exists, returning existing collection.
 [32mINFO[0m:     [16-11-2024 15:40:25] ::1:51039 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
 [32mINFO[0m:     [16-11-2024 15:40:25] ::1:51039 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 15:42:56] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 15:42:56] ::1:51049 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 15:42:56] ::1:51049 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 15:42:56] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 15:42:56] ::1:51049 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 15:42:56] ::1:51049 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 15:42:56] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 15:42:56] ::1:51049 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 15:42:56] ::1:51049 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 17:10:20] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 17:10:20] ::1:51264 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 17:10:20] ::1:51264 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 17:10:20] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 17:10:20] ::1:51264 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 17:10:20] ::1:51264 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 17:10:20] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 17:10:20] ::1:51264 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 17:10:20] ::1:51264 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 17:10:51] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 17:10:51] ::1:51269 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 17:10:51] ::1:51269 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 17:10:51] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 17:10:51] ::1:51269 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 17:10:51] ::1:51269 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 17:10:51] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 17:10:51] ::1:51269 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 17:10:51] ::1:51269 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:51:43] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:51:43] ::1:51529 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:51:43] ::1:51529 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:51:43] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:51:43] ::1:51529 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:51:43] ::1:51529 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:51:43] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:51:43] ::1:51529 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:51:44] ::1:51529 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:52:46] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:52:46] ::1:51538 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:52:46] ::1:51538 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:52:46] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:52:46] ::1:51538 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:52:46] ::1:51538 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:52:46] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:52:46] ::1:51538 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:52:46] ::1:51538 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:54:22] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:54:22] ::1:51551 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:54:22] ::1:51551 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:54:22] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:54:22] ::1:51551 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:54:22] ::1:51551 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:54:22] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:54:22] ::1:51551 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:54:22] ::1:51551 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:54:56] ::1:51560 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:54:56] ::1:51560 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:54:56] ::1:51561 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:54:56] ::1:51561 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:54:56] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:54:56] ::1:51562 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:54:56] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:54:56] ::1:51563 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:54:56] ::1:51563 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:55:06] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:55:06] ::1:51569 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:55:06] ::1:51569 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:55:06] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:55:06] ::1:51569 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:55:06] ::1:51569 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:55:06] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:55:06] ::1:51569 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:55:06] ::1:51569 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:56:03] ::1:51572 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:56:03] ::1:51572 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:56:03] ::1:51573 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:56:03] ::1:51573 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:56:03] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:56:03] ::1:51574 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:56:03] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:56:03] ::1:51575 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:56:03] ::1:51575 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:56:11] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:56:11] ::1:51581 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:56:11] ::1:51581 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:56:11] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:56:11] ::1:51581 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:56:11] ::1:51581 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:56:11] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:56:11] ::1:51581 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:56:11] ::1:51581 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:57:57] ::1:51588 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:57:57] ::1:51588 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:57:57] ::1:51589 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:57:57] ::1:51589 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:57:57] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:57:57] ::1:51590 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:57:57] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:57:57] ::1:51591 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:57:57] ::1:51591 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:58:13] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:58:13] ::1:51599 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:58:13] ::1:51599 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:58:13] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:58:13] ::1:51599 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:58:13] ::1:51599 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 18:58:13] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 18:58:13] ::1:51599 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 18:58:13] ::1:51599 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 19:00:00] ::1:51606 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 19:00:00] ::1:51606 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 19:00:00] ::1:51607 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 19:00:00] ::1:51607 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 19:00:00] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 19:00:00] ::1:51608 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 19:00:00] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 19:00:00] ::1:51609 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 19:00:00] ::1:51609 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 19:00:11] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 19:00:11] ::1:51616 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 19:00:12] ::1:51616 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 19:00:12] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 19:00:12] ::1:51616 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 19:00:12] ::1:51616 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 19:00:12] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 19:00:12] ::1:51616 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 19:00:12] ::1:51616 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:22:23] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:22:23] ::1:51851 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:22:23] ::1:51851 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:22:23] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:22:23] ::1:51851 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:22:23] ::1:51851 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:22:23] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:22:23] ::1:51851 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:22:23] ::1:51851 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:22:38] Backing off send_request(...) for 0.2s (requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Read timed out. (read timeout=15))
+[36mDEBUG[0m:    [16-11-2024 22:23:17] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:23:17] ::1:51858 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:23:17] ::1:51858 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:23:17] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:23:17] ::1:51858 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:23:17] ::1:51858 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:23:17] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:23:17] ::1:51858 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:23:17] ::1:51858 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:24:22] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:24:22] ::1:51864 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:24:23] ::1:51864 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:24:23] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:24:23] ::1:51864 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:24:23] ::1:51864 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:24:23] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:24:23] ::1:51864 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:24:23] ::1:51864 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:26:36] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:26:36] ::1:51874 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:26:36] ::1:51874 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:26:36] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:26:36] ::1:51874 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:26:36] ::1:51874 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:26:36] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:26:36] ::1:51874 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:26:36] ::1:51874 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:27:26] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:27:26] ::1:51880 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:27:26] ::1:51880 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:27:26] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:27:26] ::1:51880 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:27:26] ::1:51880 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:27:26] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:27:26] ::1:51880 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:27:26] ::1:51880 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:28:40] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:28:40] ::1:51914 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:28:40] ::1:51914 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:28:40] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:28:40] ::1:51914 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:28:40] ::1:51914 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:28:40] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:28:40] ::1:51914 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:28:40] ::1:51914 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:30:07] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:30:07] ::1:51921 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:30:07] ::1:51921 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:30:07] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:30:07] ::1:51921 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:30:07] ::1:51921 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:30:07] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:30:07] ::1:51921 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:30:07] ::1:51921 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:36:32] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:36:32] ::1:51934 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:36:32] ::1:51934 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:36:32] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:36:32] ::1:51934 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:36:32] ::1:51934 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:36:32] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:36:32] ::1:51934 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:36:32] ::1:51934 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:37:05] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:37:05] ::1:51939 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:37:05] ::1:51939 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:37:05] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:37:05] ::1:51939 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:37:05] ::1:51939 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:37:05] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:37:05] ::1:51939 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:37:05] ::1:51939 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:38:42] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:38:42] ::1:51951 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:38:42] ::1:51951 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:38:42] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:38:42] ::1:51951 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:38:42] ::1:51951 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:38:42] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:38:42] ::1:51951 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:38:42] ::1:51951 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:39:16] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:39:16] ::1:51989 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:39:16] ::1:51989 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:39:16] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:39:16] ::1:51989 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:39:16] ::1:51989 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:39:16] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:39:16] ::1:51989 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:39:16] ::1:51989 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:56:38] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:56:38] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:56:38] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:56:38] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:56:38] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 22:56:38] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 22:56:38] ::1:52019 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:02:50] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:02:50] ::1:52036 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:02:50] ::1:52036 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:02:50] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:02:50] ::1:52036 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:02:50] ::1:52036 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:02:50] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:02:50] ::1:52036 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:02:50] ::1:52036 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:03:53] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:03:53] ::1:52045 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:03:53] ::1:52045 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:03:53] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:03:53] ::1:52045 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:03:53] ::1:52045 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:03:53] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:03:53] ::1:52045 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:03:53] ::1:52045 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:05:23] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:05:23] ::1:52052 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:05:23] ::1:52052 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:05:23] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:05:23] ::1:52052 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:05:23] ::1:52052 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:05:23] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:05:23] ::1:52052 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:05:23] ::1:52052 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:05:47] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:05:47] ::1:52057 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:05:47] ::1:52057 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:05:47] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:05:47] ::1:52057 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:05:47] ::1:52057 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:05:47] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:05:47] ::1:52057 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:05:47] ::1:52057 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:08:39] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:08:39] ::1:52066 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:08:39] ::1:52066 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:08:39] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:08:39] ::1:52066 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:08:39] ::1:52066 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:08:39] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:08:39] ::1:52066 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:08:39] ::1:52066 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:11:06] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:11:06] ::1:52076 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:11:06] ::1:52076 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:11:06] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:11:06] ::1:52076 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:11:06] ::1:52076 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:11:06] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:11:06] ::1:52076 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:11:06] ::1:52076 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:12:03] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:12:03] ::1:52083 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:12:03] ::1:52083 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:12:03] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:12:03] ::1:52083 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:12:03] ::1:52083 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:12:03] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:12:03] ::1:52083 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:12:03] ::1:52083 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:13:10] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:13:10] ::1:52089 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:13:10] ::1:52089 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:13:10] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:13:10] ::1:52089 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:13:10] ::1:52089 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:13:10] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:13:10] ::1:52089 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:13:11] ::1:52089 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:14:16] ::1:52095 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:14:16] ::1:52095 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:14:16] ::1:52096 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:14:16] ::1:52096 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:14:16] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:14:16] ::1:52097 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:14:16] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:14:16] ::1:52098 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:14:16] ::1:52098 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:14:26] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:14:26] ::1:52103 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:14:26] ::1:52103 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:14:26] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:14:26] ::1:52103 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:14:26] ::1:52103 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:14:26] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:14:26] ::1:52103 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:14:26] ::1:52103 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:17:08] ::1:52110 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:17:08] ::1:52110 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:17:08] ::1:52112 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:17:08] ::1:52112 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:17:08] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:17:08] ::1:52113 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:17:08] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:17:08] ::1:52114 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:17:08] ::1:52114 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:17:18] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:17:18] ::1:52120 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:17:18] ::1:52120 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:17:18] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:17:18] ::1:52120 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:17:18] ::1:52120 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:17:18] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:17:18] ::1:52120 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:17:18] ::1:52120 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:18:21] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:18:21] ::1:52126 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:18:22] ::1:52126 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:18:22] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:18:22] ::1:52126 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:18:22] ::1:52126 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:18:22] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:18:22] ::1:52126 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:18:22] ::1:52126 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:20:04] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:20:04] ::1:52133 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:20:04] ::1:52133 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:20:04] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:20:04] ::1:52133 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:20:04] ::1:52133 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:20:04] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:20:04] ::1:52133 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:20:04] ::1:52133 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:22:11] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:22:11] ::1:52142 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:22:12] ::1:52142 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:22:12] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:22:12] ::1:52142 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:22:12] ::1:52142 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:22:12] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:22:12] ::1:52142 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:22:12] ::1:52142 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:22:37] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:22:37] ::1:52147 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:22:37] ::1:52147 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:22:37] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:22:37] ::1:52147 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:22:37] ::1:52147 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:22:37] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:22:37] ::1:52147 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:22:37] ::1:52147 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:23:25] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:23:25] ::1:52153 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:23:25] ::1:52153 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:23:25] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:23:25] ::1:52153 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:23:25] ::1:52153 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:23:25] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:23:25] ::1:52153 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:23:25] ::1:52153 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:23:54] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:23:54] ::1:52160 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:23:54] ::1:52160 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:23:54] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:23:54] ::1:52160 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:23:54] ::1:52160 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:23:54] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:23:54] ::1:52160 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:23:54] ::1:52160 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:24:11] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:24:11] ::1:52164 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:24:11] ::1:52164 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:24:11] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:24:11] ::1:52164 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:24:11] ::1:52164 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:24:11] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:24:11] ::1:52164 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:24:11] ::1:52164 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:26:29] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:26:29] ::1:52173 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:26:29] ::1:52173 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:26:29] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:26:29] ::1:52173 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:26:29] ::1:52173 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:26:29] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:26:29] ::1:52173 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:26:29] ::1:52173 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:29:29] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:29:29] ::1:52182 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:29:29] ::1:52182 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:29:29] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:29:29] ::1:52182 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:29:29] ::1:52182 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:29:29] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:29:29] ::1:52182 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:29:29] ::1:52182 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:30:52] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:30:52] ::1:52190 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:30:52] ::1:52190 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:30:52] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:30:52] ::1:52190 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:30:52] ::1:52190 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:30:52] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:30:52] ::1:52190 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:30:52] ::1:52190 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:31:17] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:31:17] ::1:52195 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:31:17] ::1:52195 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:31:17] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:31:17] ::1:52195 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:31:17] ::1:52195 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:31:17] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:31:17] ::1:52195 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:31:17] ::1:52195 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:32:43] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:32:43] ::1:52206 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:32:43] ::1:52206 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:32:43] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:32:43] ::1:52206 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:32:43] ::1:52206 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:32:43] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:32:43] ::1:52206 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:32:43] ::1:52206 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:32:57] ::1:52210 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:32:57] ::1:52210 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:32:57] ::1:52211 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:32:57] ::1:52211 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:32:57] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:32:57] ::1:52212 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:32:57] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:32:57] ::1:52213 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:32:57] ::1:52213 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:33:03] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:33:03] ::1:52218 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:33:03] ::1:52218 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:33:03] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:33:03] ::1:52218 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:33:03] ::1:52218 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:33:03] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:33:03] ::1:52218 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:33:03] ::1:52218 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:33:45] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:33:45] ::1:52224 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:33:45] ::1:52224 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:33:45] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:33:45] ::1:52224 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:33:45] ::1:52224 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:33:45] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:33:45] ::1:52224 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:33:45] ::1:52224 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:37:48] ::1:52231 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:37:48] ::1:52231 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:37:48] ::1:52232 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:37:48] ::1:52232 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:37:48] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:37:48] ::1:52233 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:37:48] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:37:48] ::1:52234 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:37:48] ::1:52234 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:39:35] ::1:52239 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:39:35] ::1:52239 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:39:35] ::1:52240 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:39:35] ::1:52240 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:39:35] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:39:35] ::1:52241 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:39:35] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:39:35] ::1:52242 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:39:35] ::1:52242 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:40:12] ::1:52250 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:40:12] ::1:52250 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:40:12] ::1:52251 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:40:12] ::1:52251 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:40:12] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:40:12] ::1:52252 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:40:12] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:40:12] ::1:52253 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:40:12] ::1:52253 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:42:23] ::1:52264 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:42:23] ::1:52264 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:42:23] ::1:52265 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:42:23] ::1:52265 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:42:23] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:42:23] ::1:52266 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:42:23] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:42:23] ::1:52267 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:42:23] ::1:52267 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:43:53] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:43:53] ::1:52278 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:43:53] ::1:52278 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:43:53] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:43:53] ::1:52278 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:43:53] ::1:52278 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:43:53] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:43:53] ::1:52278 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:43:53] ::1:52278 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:51:06] ::1:52299 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:51:06] ::1:52299 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:51:07] ::1:52300 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:51:07] ::1:52300 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:51:07] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:51:07] ::1:52301 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:51:07] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:51:07] ::1:52302 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:51:07] ::1:52302 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:52:09] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:52:09] ::1:52312 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:52:09] ::1:52312 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:52:09] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:52:09] ::1:52312 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:52:09] ::1:52312 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:52:09] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:52:09] ::1:52312 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:52:09] ::1:52312 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:53:27] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:53:27] ::1:52322 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:53:27] ::1:52322 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:53:27] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:53:27] ::1:52322 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:53:27] ::1:52322 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:53:27] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:53:27] ::1:52322 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:53:27] ::1:52322 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:54:05] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:54:05] ::1:52331 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:54:05] ::1:52331 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:54:05] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:54:05] ::1:52331 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:54:05] ::1:52331 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:54:05] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:54:05] ::1:52331 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:54:05] ::1:52331 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:57:10] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:57:10] ::1:52342 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:57:10] ::1:52342 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:57:10] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:57:10] ::1:52342 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:57:10] ::1:52342 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:57:10] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:57:10] ::1:52342 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:57:10] ::1:52342 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:57:23] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:57:23] ::1:52347 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:57:23] ::1:52347 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:57:23] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:57:23] ::1:52347 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:57:23] ::1:52347 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:57:23] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:57:23] ::1:52347 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:57:23] ::1:52347 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:58:46] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:58:46] ::1:52354 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:58:46] ::1:52354 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:58:46] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:58:46] ::1:52354 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:58:46] ::1:52354 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:58:46] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:58:46] ::1:52354 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:58:47] ::1:52354 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:59:08] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:59:08] ::1:52359 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:59:08] ::1:52359 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:59:08] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:59:08] ::1:52359 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:59:08] ::1:52359 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:59:08] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:59:08] ::1:52359 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:59:08] ::1:52359 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:59:57] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:59:57] ::1:52388 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:59:57] ::1:52388 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:59:57] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:59:57] ::1:52388 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:59:57] ::1:52388 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [16-11-2024 23:59:57] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [16-11-2024 23:59:57] ::1:52388 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [16-11-2024 23:59:57] ::1:52388 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:07:06] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:07:06] ::1:52412 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:07:06] ::1:52412 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:07:06] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:07:06] ::1:52412 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:07:06] ::1:52412 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:07:06] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:07:06] ::1:52412 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:07:06] ::1:52412 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:08:48] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:08:48] ::1:52418 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:08:48] ::1:52418 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:08:48] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:08:48] ::1:52418 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:08:48] ::1:52418 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:08:48] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:08:48] ::1:52418 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:08:49] ::1:52418 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:09:50] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:09:50] ::1:52427 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:09:50] ::1:52427 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:09:50] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:09:50] ::1:52427 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:09:50] ::1:52427 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:09:50] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:09:50] ::1:52427 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:09:50] ::1:52427 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:11:55] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:11:55] ::1:52435 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:11:55] ::1:52435 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:11:55] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:11:55] ::1:52435 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:11:55] ::1:52435 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:11:55] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:11:55] ::1:52435 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:11:55] ::1:52435 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:13:09] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:13:09] ::1:52442 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:13:09] ::1:52442 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:13:09] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:13:09] ::1:52442 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:13:09] ::1:52442 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:13:09] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:13:09] ::1:52442 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:13:09] ::1:52442 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:14:13] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:14:13] ::1:52449 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:14:13] ::1:52449 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:14:13] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:14:13] ::1:52449 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:14:13] ::1:52449 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:14:13] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:14:13] ::1:52449 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:14:13] ::1:52449 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:14:58] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:14:58] ::1:52457 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:14:58] ::1:52457 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:14:58] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:14:58] ::1:52457 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:14:58] ::1:52457 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:14:58] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:14:58] ::1:52457 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:14:58] ::1:52457 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:17:19] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:17:19] ::1:52465 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:17:19] ::1:52465 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:17:19] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:17:19] ::1:52465 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:17:19] ::1:52465 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:17:19] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:17:19] ::1:52465 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:17:19] ::1:52465 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:23:11] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:23:11] ::1:52474 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:23:11] ::1:52474 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:23:11] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:23:11] ::1:52474 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:23:11] ::1:52474 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:23:11] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:23:11] ::1:52474 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:23:11] ::1:52474 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:26:12] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:26:12] ::1:52486 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:26:12] ::1:52486 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:26:12] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:26:12] ::1:52486 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:26:12] ::1:52486 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:26:12] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:26:12] ::1:52486 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:26:12] ::1:52486 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:30:30] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:30:30] ::1:52505 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:30:30] ::1:52505 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:30:30] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:30:30] ::1:52505 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:30:30] ::1:52505 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:30:30] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:30:30] ::1:52505 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:30:30] ::1:52505 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:31:03] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:31:03] ::1:52510 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:31:03] ::1:52510 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:31:03] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:31:03] ::1:52510 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:31:03] ::1:52510 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:31:03] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:31:03] ::1:52510 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:31:03] ::1:52510 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:31:54] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:31:54] ::1:52516 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:31:54] ::1:52516 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:31:54] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:31:54] ::1:52516 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:31:54] ::1:52516 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:31:54] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:31:54] ::1:52516 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:31:54] ::1:52516 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:36:00] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:36:00] ::1:52526 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:36:00] ::1:52526 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:36:00] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:36:00] ::1:52526 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:36:00] ::1:52526 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:36:00] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:36:00] ::1:52526 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:36:00] ::1:52526 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:36:48] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:36:48] ::1:52534 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:36:48] ::1:52534 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:36:48] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:36:48] ::1:52534 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:36:48] ::1:52534 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:36:48] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:36:48] ::1:52534 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:36:48] ::1:52534 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:38:37] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:38:37] ::1:52541 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:38:37] ::1:52541 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:38:37] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:38:37] ::1:52541 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:38:37] ::1:52541 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:38:37] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:38:37] ::1:52541 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:38:37] ::1:52541 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:39:31] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:39:31] ::1:52552 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:39:31] ::1:52552 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:39:31] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:39:31] ::1:52552 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:39:31] ::1:52552 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:39:31] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:39:31] ::1:52552 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:39:31] ::1:52552 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:39:50] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:39:50] ::1:52559 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:39:50] ::1:52559 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:39:50] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:39:50] ::1:52559 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:39:50] ::1:52559 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:39:50] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:39:50] ::1:52559 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:39:50] ::1:52559 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:40:42] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:40:42] ::1:52566 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:40:42] ::1:52566 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:40:42] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:40:42] ::1:52566 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:40:42] ::1:52566 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:40:42] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:40:42] ::1:52566 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:40:42] ::1:52566 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:41:18] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:41:18] ::1:52572 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:41:18] ::1:52572 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:41:18] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:41:18] ::1:52572 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:41:18] ::1:52572 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:41:18] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:41:18] ::1:52572 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:41:18] ::1:52572 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:41:42] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:41:42] ::1:52576 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:41:43] ::1:52576 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:41:43] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:41:43] ::1:52576 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:41:43] ::1:52576 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:41:43] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:41:43] ::1:52576 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:41:43] ::1:52576 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:44:57] ::1:52668 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:44:57] ::1:52668 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:44:57] ::1:52669 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:44:57] ::1:52669 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:44:57] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:44:57] ::1:52670 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:44:57] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:44:57] ::1:52671 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:44:57] ::1:52671 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/get HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:51:23] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:51:23] ::1:52709 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:51:23] ::1:52709 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:51:23] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:51:23] ::1:52709 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:51:23] ::1:52709 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 00:51:23] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 00:51:23] ::1:52709 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 00:51:23] ::1:52709 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 01:03:46] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 01:03:46] ::1:52747 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:03:46] ::1:52747 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 01:03:46] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 01:03:46] ::1:52747 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:03:46] ::1:52747 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 01:03:46] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 01:03:46] ::1:52747 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:03:46] ::1:52747 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 01:06:19] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 01:06:19] ::1:52784 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:06:19] ::1:52784 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 01:06:19] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 01:06:19] ::1:52784 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:06:19] ::1:52784 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 01:06:19] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 01:06:19] ::1:52784 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:06:19] ::1:52784 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 01:08:45] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 01:08:45] ::1:52801 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:08:45] ::1:52801 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 01:08:45] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 01:08:45] ::1:52801 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:08:45] ::1:52801 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [17-11-2024 01:08:45] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [17-11-2024 01:08:45] ::1:52801 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:08:45] ::1:52801 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [17-11-2024 01:13:04] Shutting down
+[32mINFO[0m:     [17-11-2024 01:13:04] Waiting for application shutdown.
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component System
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component SegmentAPI
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component Posthog
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component SqliteDB
+[36mDEBUG[0m:    [17-11-2024 01:13:04] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [17-11-2024 01:13:04] Application shutdown complete.
+[32mINFO[0m:     [17-11-2024 01:13:04] Finished server process [[36m10308[0m]

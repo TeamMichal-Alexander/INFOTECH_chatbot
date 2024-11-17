@@ -54,12 +54,13 @@ document.getElementById('action-button').addEventListener('click', function () {
     const button = document.getElementById('action-button');
     const selectedText = window.getSelection();
     const cleanedText = String(selectedText).replace(/\n/g, " ");
+    clearSelection();
     // form_improve.style.position = 'absolute';
     // form_improve.style.left = button.style.left
     // form_improve.style.top = button.style.top
-    quotation_text.innerText = cleanedText
-    quotation.style.display = 'block'
-    button.style.display = 'none'
+    quotation_text.innerText = cleanedText;
+    quotation.style.display = 'block';
+    button.style.display = 'none';
     // form_improve.style.zIndex = '10000';
     // form_improve.style.display = 'block'
 });
@@ -94,3 +95,21 @@ function delete_quotation(){
     quotation_text.innerText = '';
     quotation.style.display = 'none';
 }
+
+function clearSelection() {
+    if (window.getSelection) {
+        const selection = window.getSelection();
+        if (selection) {
+            selection.removeAllRanges(); // Удаляет все выделенные диапазоны
+        }
+    } else if (document.selection) { // Для старых браузеров (IE)
+        document.selection.empty();
+    }
+}
+
+document.getElementById('query').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        sendAjaxRequest();
+    }
+});
