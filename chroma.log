@@ -10053,3 +10053,34 @@
 [36mDEBUG[0m:    [20-11-2024 11:23:51] Collection fizyka2 already exists, returning existing collection.
 [32mINFO[0m:     [20-11-2024 11:23:51] ::1:60116 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
 [32mINFO[0m:     [20-11-2024 11:23:51] ::1:60116 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
+[32mINFO[0m:     [20-11-2024 13:48:04] Set chroma_server_nofile to 65535
+[32mINFO[0m:     [20-11-2024 13:48:04] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [20-11-2024 13:48:04] Starting component System
+[36mDEBUG[0m:    [20-11-2024 13:48:04] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [20-11-2024 13:48:04] Starting component SqliteDB
+[36mDEBUG[0m:    [20-11-2024 13:48:04] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [20-11-2024 13:48:04] Starting component Posthog
+[36mDEBUG[0m:    [20-11-2024 13:48:04] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [20-11-2024 13:48:04] Starting component SegmentAPI
+[32mINFO[0m:     [20-11-2024 13:48:04] Started server process [[36m42080[0m]
+[32mINFO[0m:     [20-11-2024 13:48:04] Waiting for application startup.
+[32mINFO[0m:     [20-11-2024 13:48:04] Application startup complete.
+[32mINFO[0m:     [20-11-2024 13:48:05] Uvicorn running on [1mhttp://localhost:8001[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [20-11-2024 13:59:20] ::1:55600 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [20-11-2024 13:59:20] ::1:55600 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [20-11-2024 13:59:20] ::1:55601 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [20-11-2024 13:59:20] ::1:55601 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [20-11-2024 13:59:20] Collection jezyk-polski-final already exists, returning existing collection.
+[32mINFO[0m:     [20-11-2024 13:59:20] ::1:55602 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [20-11-2024 14:00:00] Collection historia2 already exists, returning existing collection.
+[32mINFO[0m:     [20-11-2024 14:00:00] ::1:55626 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [20-11-2024 14:00:00] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [20-11-2024 14:00:00] ::1:55626 - "POST /api/v1/collections/6e90e672-20af-4c87-b995-a694d1b4de0c/query HTTP/1.1" 200
+[36mDEBUG[0m:    [20-11-2024 14:00:00] Collection jezyk-polski already exists, returning existing collection.
+[32mINFO[0m:     [20-11-2024 14:00:00] ::1:55626 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [20-11-2024 14:00:00] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [20-11-2024 14:00:01] ::1:55626 - "POST /api/v1/collections/b1b0e21f-f2e7-492e-a19b-66e055bf902f/query HTTP/1.1" 200
+[36mDEBUG[0m:    [20-11-2024 14:00:01] Collection fizyka2 already exists, returning existing collection.
+[32mINFO[0m:     [20-11-2024 14:00:01] ::1:55626 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [20-11-2024 14:00:01] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [20-11-2024 14:00:01] ::1:55626 - "POST /api/v1/collections/82151a9e-0843-40ea-ac74-5bcab961581d/query HTTP/1.1" 200
