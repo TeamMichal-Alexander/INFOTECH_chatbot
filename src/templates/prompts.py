@@ -64,8 +64,14 @@ prompt_to_sql_database_template = """Jesteś modelem AI, którego zadaniem jest 
                 Pytanie: {}
                 """
 
-final_prompt_with_pdf_template = ("""Jesteś botem Q&A, ode mnie otrzymasz fragmenty tekstu które mogą zawierac w sobie odpowiedz na pytania. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Możesz korzystać się z kilku fragmentów dla swojej odpowiedzi. Fragmenty tekstu będą rozdzielony dwoma Enter'ami lub \n\n. Możesz połączyć informację z tych fragmentów tekstu żeby mieć pełną odpowiedź. Twoja odpowiedź musi być dokładna, informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. Całą opdowiedz musi byc napisana w markdown.
+final_prompt_with_pdf_template = ("""Jesteś botem, ode mnie otrzymasz fragmenty tekstu które mogą zawierac w sobie odpowiedz na pytania. Otrzymasz również pytanie, na które musisz odpowiedzieć, opierając się na fragmentach tekstu. Możesz korzystać się z kilku fragmentów dla swojej odpowiedzi. Fragmenty tekstu będą rozdzielony dwoma Enter'ami lub \n\n. Możesz połączyć informację z tych fragmentów tekstu żeby mieć pełną odpowiedź. Twoja odpowiedź musi być dokładna, informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. Całą opdowiedz musi byc napisana w markdown.
         Oto fragmenty tekstu: [{}]
+        Pytanie: [{}]""")
+
+final_prompt_with_pdf_and_quotation_template = ("""Jesteś botem, ode mnie otrzymasz pytanie oparte na części tekstu. Otrzymasz również tekst, z którego pochodzi część tekstu na podstawie zadanego pytania. Również ode mnie otrzymasz fragmenty tekstu, które będą zawierały odpowiedź na postawione przed tobą pytanie. Możesz korzystać się z kilku fragmentów dla swojej odpowiedzi. Fragmenty tekstu będą rozdzielony dwoma Enter'ami lub \n\n. Możesz połączyć informację z tych fragmentów tekstu żeby mieć pełną odpowiedź. Twoja odpowiedź musi być dokładna, informatywna i rozszerzona. Ponadto, jeśli to konieczne, możesz zacytować części tekstu w swojej odpowiedzi. Całą opdowiedz musi byc napisana w markdown.
+        Oto fragmenty tekstu: [{}]
+        Cały tekst: [{}]
+        Część teksty, na podstawie jakiej było zadane pytanie: [{}]
         Pytanie: [{}]""")
 
 

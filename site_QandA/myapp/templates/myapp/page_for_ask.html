@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <title>Запрос</title>
+    <title>Infotech chatbot</title>
     {% load static %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -9,12 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <link rel="icon" href="{% static 'icons/cropped-cropped-znak_specjalny-32x32.png' %}" type="image/png">
 </head>
 <body>
-    <button id="action-button">Zmień</button>
+    <button id="action-button">Cytować</button>
     <div class="main">
         <div id="hi_text">
-            <h1>Cześć użutkowniku</h1>
+            <h1 id="h1_text"></h1>
         </div>
         <div id="answer">
                 <div id="inside_div">
@@ -29,7 +30,7 @@
                 <div class="quotation" id="quotation">
                     <div>
                         <div class="quotation_symbol">
-                            <p>↪</p>
+                            <p id="quotation_symbol">↪</p>
                         </div>
                         <div class="quotation_text">
                              <p id="quotation_text"></p>
@@ -54,7 +55,7 @@
                             <input type="text" name="query" id="query" placeholder="Wyślij zapytanie do modeli" required>
                         </div>
                         <div class="button_submit">
-                            <button id='button_submit_form' type="button" onclick="sendAjaxRequest()">Zadaj</button>
+                            <button id='button_submit_form' type="submit" onclick="sendAjaxRequest()">Zadaj</button>
                         </div>
                     </div>
                 </form>
@@ -64,19 +65,23 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="{% static 'page_for_ask.js' %}"></script>
     <script>
         function sendAjaxRequest() {
             const query = document.getElementById('query').value;
             const choiceField = document.getElementById('choice_field').value;
             const quotation_text = document.getElementById('quotation_text').innerText;
+            const quotation_text_element = document.getElementById('quotation_text');
+            const quotation_element = document.getElementById('quotation');
             const loader = document.getElementById('loader');
             const existingElement = document.getElementById('inside_div');
             const newElement = document.createElement('div');
+            const quotationElement = document.createElement('div');
             const answer_div = document.getElementById('answer');
             const input = document.getElementById('query');
             const button = document.getElementById('button_submit_form');
             const hi_text_div = document.getElementById('hi_text');
+            const quotation_div = sessionStorage.getItem('quotation_div');
+
 
             console.log(!query.trim())
             if (!query.trim()) {
@@ -89,6 +94,17 @@
             input.value = '';
             answer_div.style.display = 'block';
             void answer_div.offsetWidth;
+            if (quotation_text.length > 0) {
+                quotationElement.classList.add('UserQuotation');
+                let text;
+                if (quotation_text.length > 50) {
+                    text = quotation_text.slice(0, 50) + '...';
+                } else {
+                    text = quotation_text + '...';
+                }
+                quotationElement.innerHTML = '<div><p>' + '↪' + text + '</p></div>';
+                existingElement.appendChild(quotationElement)
+            }
             newElement.classList.add('UserQuestion');
             newElement.innerHTML = '<div><p>' + query + '</p></div>';
             existingElement.appendChild(newElement);
@@ -96,7 +112,18 @@
             console.log(query);
             console.log(choiceField);
             console.log(quotation_text);
+            const reply_symbol_quotation = document.getElementById('quotation_symbol');
+            const delete_quotation = document.getElementById('delete_quotation');
+
+
+            reply_symbol_quotation.style.display = 'none';
+            delete_quotation.style.display = 'none';
             loader.style.display = 'block';
+            quotation_element.style.height = '0';
+            quotation_text_element.innerText = '';
+            setTimeout(() => {
+                quotation_element.style.display = 'none';
+            }, 300);
 
             fetch("{% url 'handle_query' %}", {
                 method: "POST",
@@ -108,7 +135,8 @@
                 body: JSON.stringify({
                     query: query,
                     choice_field: choiceField,
-                    quotation_text: quotation_text
+                    quotation_text: quotation_text,
+                    quotation_div: quotation_div
                 })
             })
             .then(response => {
@@ -120,11 +148,12 @@
             .then(data => {
                 // Обновляем результат на странице
                 const newElement = document.createElement('div');
+                newElement.classList.add('UserAnswer');
 
                 console.log(data);
                 if (data.success) {
                     // resultContainer.innerHTML = data.result;
-                    newElement.innerHTML = '<div class="UserAnswer">' + data.result + '</div>';
+                    newElement.innerHTML = '<div>' + data.result + '</div>';
                     existingElement.appendChild(newElement);
                 } else {
                     newElement.innerHTML = "Ошибка: " + data.error;
@@ -138,6 +167,7 @@
             });
     }
     </script>
+    <script src="{% static 'page_for_ask.js' %}"></script>
 
 </body>
 </html>

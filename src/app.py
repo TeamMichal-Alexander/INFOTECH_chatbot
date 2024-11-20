@@ -20,12 +20,11 @@ def create_model_instance():
 
         working_with_ollama_server = True
 
-        files = Files(['historia2', 'jezyk-polski'], working_with_ollama_server)
+        files = Files(['historia2', 'jezyk-polski', 'fizyka2'], working_with_ollama_server)
         my_class_instance = Communication(pdf_path=os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/historia2.pdf')), working_with_ollama_server=working_with_ollama_server, files=files)
 
 @app.route('/api/model/ask', methods=['POST'])
 def action():
-    create_model_instance()
     data = request.json
     print(data)
     result = my_class_instance.ask_api(data)
