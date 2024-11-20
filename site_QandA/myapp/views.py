@@ -32,14 +32,14 @@ def handle_query(request):
         query = data.get('query')
         selected_option = data.get('choice_field')
         quotation_text = data.get('quotation_text')
+        quotation_div = data.get('quotation_div')
 
-        print(request.POST)
-        print(query)
-        print(selected_option)
-        print(True if quotation_text else False)
-
-        # Запрос к внешнему API
-        response = requests.post('http://127.0.0.1:5000/api/model/ask', json={'question': query, 'file': selected_option})
+        response = requests.post('http://127.0.0.1:5000/api/model/ask', json={
+            'question': query,
+            'file': selected_option,
+            'quotation_text': quotation_text,
+            'quotation_div': quotation_div
+        })
 
         if response.status_code == 200:
             data = response.json()

@@ -213,8 +213,6 @@ class Communication:
         )
         # Tworzymy kolekcję dokumentów w ChromaDB, jeśli jeszcze nie istnieje
         self.collection = self.client.get_or_create_collection(name="jezyk-polski-final", embedding_function=self.ollama_embedding_for_chromadb, metadata={"hnsw:space": "cosine"})
-        # Wczytujemy dokument PDF
-        self.document = self.Files.add_new_file('fizyka2')
         # Ścieżka do pliku bazy danych SQL
         self.database_filename = os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/plan_lekcji10.db'))
         self.db_path = os.path.join(os.getcwd(), self.database_filename)
@@ -230,12 +228,25 @@ class Communication:
 
     def ask_pdf(self, question: str) -> str:
         # Wyszukujemy najbardziej pasujące dokumenty
-        matched_docs = self.Files.search_most_relevant_pieces_of_text(question, 15)
+        matched_docs = self.Files.search_most_relevant_pieces_of_text(question, 30)
         # Zwracamy dopasowane dokumenty
         matched_docs = "\n\n".join([f'{i+1} fragment tekstu: ' + str(text) for i, text in enumerate(matched_docs)])
         print(matched_docs)
         # Generujemy odpowiedź na pytanie na podstawie fragmentów dokumentu
         output = self.Models.generation_function(final_prompt_with_pdf_template.format(matched_docs, question))
+        return output
+
+
+    def ask_pdf_with_quotation(self, question: str, quotation_text: str, quotation_div: str) -> str:
+        # Wyszukujemy najbardziej pasujące dokumenty
+        matched_docs = self.Files.search_most_relevant_pieces_of_text(quotation_text, 30)
+        # Zwracamy dopasowane dokumenty
+        matched_docs = "\n\n".join([f'{i+1} fragment tekstu: ' + str(text) for i, text in enumerate(matched_docs)])
+        # print(matched_docs)
+        # Generujemy odpowiedź na pytanie na podstawie fragmentów dokumentu
+        answer = final_prompt_with_pdf_and_quotation_template.format(matched_docs, quotation_div, quotation_text, question)
+        print(answer)
+        output = self.Models.generation_function(answer)
         return output
 
 
@@ -275,11 +286,23 @@ class Communication:
         # Wybieramy odpowiednią metodę odpowiedzi na podstawie typu pliku
         question = _json.get('question')
         selected_option = _json.get('file')
-        if selected_option == "pdfs":
-            answer = self.ask_pdf(question)
-        elif selected_option == "lekcji":
-            answer = self.ask_sql(question)
+        quotation_text = _json.get('quotation_text')
+        quotation_div = _json.get('quotation_div')
+        if quotation_text:
+            if selected_option == "pdfs":
+                answer = self.ask_pdf_with_quotation(question, quotation_text, quotation_div)
+            elif selected_option == "lekcji":
+                answer = self.ask_sql(question)
+            else:
+                answer = 'Wystąpił błąd, spróbuj ponownie'
+            json_answer = {'answer': answer}
+            return json_answer
         else:
-            answer = 'Wystąpił błąd, spróbuj ponownie'
-        json_answer = {'answer': answer}
-        return json_answer
+            if selected_option == "pdfs":
+                answer = self.ask_pdf(question)
+            elif selected_option == "lekcji":
+                answer = self.ask_sql(question)
+            else:
+                answer = 'Wystąpił błąd, spróbuj ponownie'
+            json_answer = {'answer': answer}
+            return json_answer
