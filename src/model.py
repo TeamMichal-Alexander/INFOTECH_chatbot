@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from fileinput import filename
 from os.path import exists
@@ -11,6 +12,7 @@ import chromadb
 import chromadb.utils.embedding_functions as embedding_functions
 import pdfplumber
 from openai import OpenAI
+from openai import AsyncOpenAI
 
 
 from langchain_community.utilities import SQLDatabase
@@ -45,23 +47,22 @@ class Files:
         self.list_of_collections = list_of_collections
 
 
-    def add_new_file(self, file_name: str) -> bool:
-        try:
-            _ = self._read_file(file_name)
-            self.list_of_collections.append(file_name)
-            return True
-        except Exception as e:
-            print(e)
-            return False
+    async def add_new_file(self, file_name: str) -> bool:
+        print(1)
+        _ = await self._read_file(file_name)
+        self.list_of_collections.append(file_name)
+        return True
 
-    def _make_chunking(self, file_name):
+
+    async def _make_chunking(self, file_name):
         loader = UnstructuredLoader(
             file_path=self.pdf_file(file_name),
             api_key=os.getenv("UNSTRUCTURED_API_KEY"),
             partition_via_api=True,
         )
-
-        docs = loader.load()
+        print('Starting chunkin via unstructured')
+        docs = await asyncio.to_thread(loader.load)
+        print('Ending chunkin via unstructured')
         text = ''
         tables = []
         for element in docs:
@@ -86,36 +87,36 @@ class Files:
         return docs_splited
 
 
-    def _read_file(self, file_name: str) -> list[Any]:
+    async def _read_file(self, file_name: str) -> list[Any]:
         pkl_file_path = self.pkl_file(file_name)
-        collection = self.client.get_or_create_collection(name=file_name,
+        collection = await asyncio.to_thread(self.client.get_or_create_collection, name=file_name,
                                                             embedding_function=self.ollama_embedding_for_chromadb,
                                                             metadata={"hnsw:space": "cosine"}
                                                             )
         if not exists(pkl_file_path):
-            self._make_chunking(file_name=file_name)
+            await self._make_chunking(file_name=file_name)
         # Ładujemy dane z pliku pickle
         with open(pkl_file_path, 'rb') as f:
-            loaded_list = pickle.load(f)
+            loaded_list = await asyncio.to_thread(pickle.load, f)
             answer = []
             # Dodajemy niepusty tekst do listy "answer"
             _ = [answer.append(i) if len(i) > 0 else None for i in loaded_list]
             # Dla każdego opisu generujemy embedding i aktualizujemy kolekcję w ChromaDB
-            if len(collection.get()['documents']) == 0:
+            if len((await asyncio.to_thread(collection.get))['documents']) == 0:
                 print(len(answer))
                 for i, descr in enumerate(answer):
-                    embedding = self.Models.embedding_function(descr)
-                    collection.add(documents=descr, ids=[f'{i}_id'], embeddings=[embedding])
+                    embedding = await self.Models.embedding_function(descr)
+                    await asyncio.to_thread(collection.add, documents=descr, ids=[f'{i}_id'], embeddings=[embedding])
                     print(i)
             return answer
 
 
-    def search_most_relevant_pieces_of_text(self, question: str, n=3) -> List[Any]:
-        embedded_question = self.Models.embedding_function(question)
+    async def search_most_relevant_pieces_of_text(self, question: str, n=3) -> List[Any]:
+        embedded_question = await self.Models.embedding_function(question)
         results = []
         for name_of_collection in self.list_of_collections:
-            collection = self.client.get_or_create_collection(name=name_of_collection, metadata={"hnsw:space": "cosine"})
-            results.append(collection.query(query_embeddings=[embedded_question], n_results=n))
+            collection = await asyncio.to_thread(self.client.get_or_create_collection, name=name_of_collection, metadata={"hnsw:space": "cosine"})
+            results.append(await asyncio.to_thread(collection.query, query_embeddings=[embedded_question], n_results=n))
         all_documents = []
         all_distances = []
         for item in results:
@@ -134,9 +135,9 @@ class Models:
         self.working_with_ollama_server = working_with_ollama_server
 
 
-    def embedding_function(self, text, model=None):
+    async def embedding_function(self, text, model=None):
         model = model or self.model_embedding
-        data = self.client_openai.embeddings.create(input=text, model=model)
+        data = await asyncio.to_thread(self.client_openai.embeddings.create, input=text, model=model)
         return data.data[0].embedding
 
         # return ollama.embeddings(model='nomic-embed-text', prompt=text)['embedding']
@@ -155,16 +156,16 @@ class Models:
         # return query_embeddings.tolist()[0]
 
 
-    def generation_function(self, text, model=None):
+    async def generation_function(self, text, model=None):
         # model = model or self.model
         # if self.working_with_ollama_server:
         #     return ask_ollama_server(prompt=text, model=model)['response']
         # else:
         #     return ollama.generate(prompt=text, model=model)['response']
 
-        client = OpenAI()
+        client = self.client_openai
 
-        completion = client.chat.completions.create(
+        completion = await asyncio.to_thread(client.chat.completions.create,
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
@@ -186,7 +187,7 @@ class Communication:
         self.dict_of_chunks = {}
         self.client_openai = OpenAI()
         self.model_embedding = "text-embedding-3-large"
-        self.model = "llama3.2"
+        self.model = "llama3.1"
         self.faiss_path = 'content/faiss'
         self.Models = Models(working_with_ollama_server)
         self.Files = files
@@ -213,6 +214,7 @@ class Communication:
         )
         # Tworzymy kolekcję dokumentów w ChromaDB, jeśli jeszcze nie istnieje
         self.collection = self.client.get_or_create_collection(name="jezyk-polski-final", embedding_function=self.ollama_embedding_for_chromadb, metadata={"hnsw:space": "cosine"})
+        self.document = asyncio.run(self.Files.add_new_file('matematyka2'))
         # Ścieżka do pliku bazy danych SQL
         self.database_filename = os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/plan_lekcji10.db'))
         self.db_path = os.path.join(os.getcwd(), self.database_filename)
@@ -226,37 +228,37 @@ class Communication:
         self.sql_prompt_extractor = lambda x: x[x.find('SELECT'):] + ";" if x[x.find('SELECT'):].count(';') == 0 else x[x.find('SELECT'):x.rfind(';') + 1]
 
 
-    def ask_pdf(self, question: str) -> str:
+    async def ask_pdf(self, question: str) -> str:
         # Wyszukujemy najbardziej pasujące dokumenty
-        matched_docs = self.Files.search_most_relevant_pieces_of_text(question, 30)
+        matched_docs = await self.Files.search_most_relevant_pieces_of_text(question, 30)
         # Zwracamy dopasowane dokumenty
         matched_docs = "\n\n".join([f'{i+1} fragment tekstu: ' + str(text) for i, text in enumerate(matched_docs)])
         print(matched_docs)
         # Generujemy odpowiedź na pytanie na podstawie fragmentów dokumentu
-        output = self.Models.generation_function(final_prompt_with_pdf_template.format(matched_docs, question))
+        output = await self.Models.generation_function(final_prompt_with_pdf_template.format(matched_docs, question))
         return output
 
 
-    def ask_pdf_with_quotation(self, question: str, quotation_text: str, quotation_div: str) -> str:
+    async def ask_pdf_with_quotation(self, question: str, quotation_text: str, quotation_div: str) -> str:
         # Wyszukujemy najbardziej pasujące dokumenty
-        matched_docs = self.Files.search_most_relevant_pieces_of_text(quotation_text, 30)
+        matched_docs = await self.Files.search_most_relevant_pieces_of_text(quotation_text, 30)
         # Zwracamy dopasowane dokumenty
         matched_docs = "\n\n".join([f'{i+1} fragment tekstu: ' + str(text) for i, text in enumerate(matched_docs)])
         # print(matched_docs)
         # Generujemy odpowiedź na pytanie na podstawie fragmentów dokumentu
         answer = final_prompt_with_pdf_and_quotation_template.format(matched_docs, quotation_div, quotation_text, question)
         print(answer)
-        output = self.Models.generation_function(answer)
+        output = await self.Models.generation_function(answer)
         return output
 
 
-    def _generate_prompt_to_sql(self, question):
+    async def _generate_prompt_to_sql(self, question):
         for i in range(20):
             try:
                 # Wysyłamy zapytanie do łańcucha SQL
-                response = self.chain.invoke({"question": prompt_to_sql_database_template.format(question)})
+                response = await asyncio.to_thread(self.chain.invoke({"question": prompt_to_sql_database_template.format(question)}))
                 # Jeśli zapytanie SQL zwróci dane, generujemy odpowiedź
-                answer = self.db.run(self.sql_prompt_extractor(response))
+                answer = await asyncio.to_thread(self.db.run(self.sql_prompt_extractor(response)))
                 if len(answer) > 0:
                     return response
                 else:
@@ -266,23 +268,23 @@ class Communication:
         return None
 
 
-    def ask_sql(self, question):
+    async def ask_sql(self, question):
         # Tworzymy zapytanie do bazy SQL
-        response = self._generate_prompt_to_sql(question)
+        response = await self._generate_prompt_to_sql(question)
         if response:
             # Tworzymy odpowiedź na podstawie zapytania SQL
-            db_context = self.sql_prompt_extractor(response)
-            db_answer = self.db.run(db_context)
+            db_context = await self.sql_prompt_extractor(response)
+            db_answer = await asyncio.to_thread(self.db.run(db_context))
             self.logger.info(db_context)
             self.logger.info(db_answer)
             # Generujemy odpowiedź w zależności od serwera Ollama
-            return self.Models.generation_function(final_prompt_sql_template.format(question=question, result=db_answer, request_to_sql=db_context))
+            return await self.Models.generation_function(final_prompt_sql_template.format(question=question, result=db_answer, request_to_sql=db_context))
         else:
             # Jeśli zapytanie SQL się nie powiedzie, zwracamy odpowiedź błędną
             return 'Niestety nie udało się znaleść jakiejkolwiek informacji, sprobójcie przeformulować prompt lub zapytajcie o czymś innym'
 
 
-    def ask_api(self, _json: dict):
+    async def ask_api(self, _json: dict):
         # Wybieramy odpowiednią metodę odpowiedzi na podstawie typu pliku
         question = _json.get('question')
         selected_option = _json.get('file')
@@ -290,18 +292,18 @@ class Communication:
         quotation_div = _json.get('quotation_div')
         if quotation_text:
             if selected_option == "pdfs":
-                answer = self.ask_pdf_with_quotation(question, quotation_text, quotation_div)
+                answer = await self.ask_pdf_with_quotation(question, quotation_text, quotation_div)
             elif selected_option == "lekcji":
-                answer = self.ask_sql(question)
+                answer = await self.ask_sql(question)
             else:
                 answer = 'Wystąpił błąd, spróbuj ponownie'
             json_answer = {'answer': answer}
             return json_answer
         else:
             if selected_option == "pdfs":
-                answer = self.ask_pdf(question)
+                answer = await self.ask_pdf(question)
             elif selected_option == "lekcji":
-                answer = self.ask_sql(question)
+                answer = await self.ask_sql(question)
             else:
                 answer = 'Wystąpił błąd, spróbuj ponownie'
             json_answer = {'answer': answer}

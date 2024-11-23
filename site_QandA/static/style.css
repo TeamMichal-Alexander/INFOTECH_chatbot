@@ -52,7 +52,7 @@ div.UserAnswer {
     width: 90%;
 }
 
-div.UserAnswer > div > p,  div.UserAnswer > div > ol{
+div.UserAnswer > div > p,  div.UserAnswer > div > ol, div.UserAnswer > div > ul{
     margin-left: 5%;
 }
 

@@ -1,0 +1,8 @@
+/.idea
+.env
+/expirement
+*.log
+/content/*.pdf
+*.pdf
+py_log.log
+*/__pycache__
