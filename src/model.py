@@ -1,18 +1,14 @@
 import asyncio
 import logging
-from fileinput import filename
 from os.path import exists
 from typing import List, Any
 
 import ollama
-from importlib_metadata import metadata
 from ollama import embeddings
 
 import chromadb
 import chromadb.utils.embedding_functions as embedding_functions
-import pdfplumber
 from openai import OpenAI
-from openai import AsyncOpenAI
 
 
 from langchain_community.utilities import SQLDatabase
@@ -27,9 +23,7 @@ from langchain_experimental.text_splitter import SemanticChunker
 from langchain.embeddings import OpenAIEmbeddings
 from langchain_community.embeddings import OllamaEmbeddings
 import pickle
-from llama_index.core.node_parser import SemanticSplitterNodeParser
 from langchain_openai import OpenAIEmbeddings
-from llama_index.core import SimpleDirectoryReader
 
 import os
 

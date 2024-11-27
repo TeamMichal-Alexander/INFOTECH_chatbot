@@ -79,8 +79,8 @@ div.UserQuestion > div > p {
 div.UserQuotation {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
     margin-bottom: 0;
 }
 
