@@ -52,9 +52,10 @@ python3 site_QandA/manage.py runserver
 ---
 
 ## 🖼️ Screenshots  
-![Main Interface](https://via.placeholder.com/800x400.png?text=Add+Screenshot+Here)  
-*Add screenshots or GIFs to showcase the project in action.*  
-
+Interface when you load the site:
+![Main Interface](assets/start.png) 
+Interface when you're using the site:
+![In Use Interface](assets/in_use.png)  
 ---
 
 ## 📂 Project Structure  
