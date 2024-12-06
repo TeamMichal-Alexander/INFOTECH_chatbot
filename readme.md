@@ -76,6 +76,7 @@ Interface when you're using the site:
 │   ├── copy_ollama_function_ChatOllama.py      # File which helps to work LangChain with ollama deployed on server
 ├── site_QandA/                                 # Django web app  
 │   ├── ...
+├── .env                                        # File with env variables
 ├── requirements.txt                            # Python dependencies  
 ├── entrypoint.sh                               # sh code for start servers work in docker container
 ├── Dockerfile                                  # Dockerfile
