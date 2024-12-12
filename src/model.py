@@ -55,7 +55,7 @@ class Files:
             partition_via_api=True,
         )
         print('Starting chunkin via unstructured')
-        docs = await asyncio.to_thread(loader.load)
+        docs = loader.load()
         print('Ending chunkin via unstructured')
         text = ''
         tables = []
@@ -208,7 +208,7 @@ class Communication:
         )
         # Tworzymy kolekcję dokumentów w ChromaDB, jeśli jeszcze nie istnieje
         self.collection = self.client.get_or_create_collection(name="jezyk-polski-final", embedding_function=self.ollama_embedding_for_chromadb, metadata={"hnsw:space": "cosine"})
-        self.document = asyncio.run(self.Files.add_new_file('matematyka2'))
+        # self.document = asyncio.run(self.Files.add_new_file('polski2_1'))
         # Ścieżka do pliku bazy danych SQL
         self.database_filename = os.path.abspath(os.path.join(os.path.dirname(__file__), '../content/plan_lekcji10.db'))
         self.db_path = os.path.join(os.getcwd(), self.database_filename)
